@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 console.log("Yelp,I'm Hungry is starting ...");
 
-
+/*
 // NPM - EXPRESS (for Facebook)
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -99,7 +99,7 @@ function sendGenericMessage(sender,resturant) {
         }
     });
 }
-
+*/
 ///////////////////////////////////////
 var Yelp = require('yelp-api-v3');
 
@@ -132,7 +132,6 @@ function printYelp(term,location,price){
         price : apiReturn.businesses[i].price,
         url : apiReturn.businesses[i].url
       };
-      console.log(resturant.name);
     }
   })
   .catch(function (err) {
@@ -141,8 +140,9 @@ function printYelp(term,location,price){
 }
 
 printYelp('chinese','Toronto','1');
-
+/*
 // Spin up the server to Messenger ==================================
 app.listen(app.get('port'), function() {
     console.log('running on port', app.get('port'));
 });
+*/
