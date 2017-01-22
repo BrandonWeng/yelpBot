@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/BrandonWeng/yelpBot#readme",
   "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "messenger-bot": "^2.4.0",
     "node-yelp-v3": "^2.3.0",
+    "request": "^2.79.0",
     "yelp": "^1.0.2",
     "yelp-api-v3": "^1.5.0"
   }

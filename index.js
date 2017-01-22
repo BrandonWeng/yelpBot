@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 console.log("Yelp,I'm Hungry is starting ...");
 
+
 // NPM - EXPRESS (for Facebook)
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -32,7 +33,56 @@ var token = 'EAAaGpOO0SCEBANtXJrv2eBDSJqtrHajmUwPnwY50OQkU2SRlOWqJZBU66cd8ZBPyjg
 
 
 function sendTextMessage(sender, text) {
-    let messageData = { text:text };
+    var messageData = { text:text };
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error);
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error);
+        }
+    });
+}
+
+function sendGenericMessage(sender,resturant) {
+    var messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": resturant.name,
+                    "subtitle": "Element #1 of an hscroll",
+                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.messenger.com",
+                        "title": "web url"
+                    }, {
+                        "type": "postback",
+                        "title": "Postback",
+                        "payload": "Payload for first element in a generic bubble",
+                    }],
+                }, {
+                    "title": resturant.name,
+                    "subtitle": "Element #2 of an hscroll",
+                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "Postback",
+                        "payload": "Payload for second element in a generic bubble",
+                    }],
+                }]
+            }
+        }
+    };
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
@@ -66,7 +116,8 @@ function printYelp(term,location,price){
     limit:'5',
     sort:'2',
     is_closed:'false',
-    price:price
+    price:price,
+    open_now:'true'
   })
   .then(function (data) {
     var apiReturn = JSON.parse(data);
