@@ -4,7 +4,7 @@
   "description": "Yelp messenger bot",
   "main": "index.js",
   "scripts": {
-    "test": "node bot"
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/BrandonWeng/yelpBot/issues"
   },
-  "homepage": "https://github.com/BrandonWeng/yelpBot#readme"
+  "homepage": "https://github.com/BrandonWeng/yelpBot#readme",
+  "dependencies": {
+    "yelp": "^1.0.2"
+  }
 }
