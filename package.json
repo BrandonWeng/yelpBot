@@ -1,0 +1,19 @@
+{
+  "name": "yelpbot",
+  "version": "1.0.0",
+  "description": "Yelp messenger bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "node bot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonWeng/yelpBot.git"
+  },
+  "author": "Brandon WEng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonWeng/yelpBot/issues"
+  },
+  "homepage": "https://github.com/BrandonWeng/yelpBot#readme"
+}
