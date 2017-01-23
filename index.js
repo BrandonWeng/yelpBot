@@ -1,22 +1,32 @@
 'use strict'
-console.log("Messenger Bot is starting...");
+console.log("Messenger Bot is starting...")
+const express = require('express')
+const bodyParser = require('body-parser')
+const request = require('request')
+const app = express()
 
-const express = require("express");
-const Botly = require("botly");
-const botly = new Botly({
-    accessToken: 'EAAaGpOO0SCEBAAgAXW4rkGtfXWT8E4d1z9oPyJ6xRnpbJJxWmhc3ETXjiwRFiQgPKsaeyZC9KVOJfTcHNSchErByyfVKfDvZAZAXmQP4b4LUhV3Pm6K4lF2TIKjzTfmTaJ0Ahr0QLm11aoHQgwh23GfaPc1k0Da7EQRKRKTYwZDZD', //page access token provided by facebook
-    verifyToken: 'my_voice_is_my_password_verify_me',
-    webHookPath: 'https://messengerbotwavinc.herokuapp.com/webhook/'
-});
+app.set('port', (process.env.PORT || 5000))
 
-botly.on("message", (senderId, message, data) => {
-    let text = `echo: ${data.text}`;
-    botly.sendText({
-      id: senderId,
-      text: text
-    });
-});
+// Process application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: false}))
 
-const app = express();
-app.use("/webhook", botly.router());
-app.listen(3000);
+// Process application/json
+app.use(bodyParser.json())
+
+// Index route
+app.get('/', function (req, res) {
+    res.send('Hello world, I am a chat bot')
+})
+
+// for Facebook verification
+app.get('/webhook/', function (req, res) {
+    if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+        res.send(req.query['hub.challenge'])
+    }
+    res.send('Error, wrong token')
+})
+
+// Spin up the server
+app.listen(app.get('port'), function() {
+    console.log('running on port', app.get('port'))
+})
