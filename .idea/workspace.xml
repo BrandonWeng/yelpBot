@@ -21,11 +21,11 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+            <state relative-caret-position="522">
+              <caret line="66" column="69" lean-forward="false" selection-start-line="66" selection-start-column="69" selection-end-line="66" selection-end-column="69" />
               <folding>
                 <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-                <marker date="1485247461000" expanded="false" signature="3989:4670" ph="{...}" />
+                <marker date="1485247596000" expanded="false" signature="3992:4673" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -567,12 +567,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485238797133</updated>
-      <workItem from="1485238799310" duration="8576000" />
+      <workItem from="1485238799310" duration="8708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8576000" />
+    <option name="totallyTimeSpent" value="8708000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,11 +662,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        <state relative-caret-position="522">
+          <caret line="66" column="69" lean-forward="false" selection-start-line="66" selection-start-column="69" selection-end-line="66" selection-end-column="69" />
           <folding>
             <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-            <marker date="1485247461000" expanded="false" signature="3989:4670" ph="{...}" />
+            <marker date="1485247596000" expanded="false" signature="3992:4673" ph="{...}" />
           </folding>
         </state>
       </provider>
