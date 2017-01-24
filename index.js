@@ -57,10 +57,10 @@ function messageRecieved(req, res) {
         }
         if (event.postback) {
             let text = JSON.stringify(event.postback)
-            if (text == "Yes!"){
+            if (text == "hungry"){
                 sendLocationButton(sender)
                 continue
-            } else if(text == "Nope"){
+            } else if(text == "notHungry"){
                 sendTextMessage(sender,"awww... I'll be waiting then :(")
                 continue
             }
@@ -96,7 +96,7 @@ function sendStartMessage(sender) {
             "type": "template",
             "payload": {
                 "template_type": "button",
-                "text":"Hey! are you hungry?",
+                "text":"Hey! Are you hungry?",
                 "buttons":[
                     {
                         "type":"postback",
