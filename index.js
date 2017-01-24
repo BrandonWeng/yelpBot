@@ -61,10 +61,10 @@ function messageRecieved(req, res) {
                 sendLocationButton(sender)
                 continue
             } else if(text == "Nope"){
-                sendTextMessage("awww... I'll be waiting then :(")
+                sendTextMessage(sender,"awww... I'll be waiting then :(")
                 continue
             }
-            sendTextMessage("Testing...")
+            sendTextMessage(sender,"Testing!")
             continue
         }
     }
