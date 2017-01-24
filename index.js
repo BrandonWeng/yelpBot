@@ -146,8 +146,10 @@ function sendLocationButton(sender) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         }
+        console.log(response)
     })
 }
+
 
 function sendPriceRangeButton(sender) {
     let messageData = {
