@@ -113,22 +113,17 @@ json: {
     recipient: {id:sender},
     message: messageData,
 }
-}, askForLocation(error,response,body,sender))
+},function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+        askForLocation(sender)
+    })
 }
 
-function askForLocation(error, response, body,sender) {
-    if (error) {
-        console.log('Error sending messages: ', error)
-        sendTextMessage(sender,"Sorry, it seems something went wrong :(")
-    } else if (response.body.error) {
-        console.log('Error: ', response.body.error)
-        sendTextMessage(sender,"Sorry, it seems something went wrong :(")
-    }
-    sendLocationButton(sender)
-}
-
-
-function sendLocationButton(sender){
+function askForLocation(sender) {
     let messageData = {
         "text": "Please share your location:",
         "quick_replies":[
