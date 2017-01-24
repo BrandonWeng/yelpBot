@@ -57,14 +57,14 @@ function messageRecieved(req, res) {
         }
         if (event.postback) {
             let text = JSON.stringify(event.postback)
-            if (text == "hungry"){
+            if (text.payload == "hungry"){
                 sendLocationButton(sender)
                 continue
-            } else if(text == "notHungry"){
+            } else if(text.payload == "notHungry"){
                 sendTextMessage(sender,"awww... I'll be waiting then :(")
                 continue
             }
-            sendTextMessage(sender,"Testing!")
+            sendTextMessage(sender,"Testing!" + text)
             continue
         }
     }
