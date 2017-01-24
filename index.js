@@ -57,7 +57,14 @@ function messageRecieved(req, res) {
         }
         if (event.postback) {
             let text = JSON.stringify(event.postback)
-            sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+            if (text == "Yes!"){
+                sendLocationButton(sender)
+                continue
+            } else if(text == "Nope"){
+                sendTextMessage("awww... I'll be waiting then :(")
+                continue
+            }
+            sendTextMessage("Testing...")
             continue
         }
     }
@@ -119,7 +126,6 @@ function sendStartMessage(sender) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         }
-        sendLocationButton(sender)
     })
 }
 
