@@ -109,15 +109,46 @@ json: {
     recipient: {id:sender},
     message: messageData,
 }
-}, function(error, response, body) {
-    if (error) {
-        console.log('Error sending messages: ', error)
-    } else if (response.body.error) {
-        console.log('Error: ', response.body.error)
-    }
-})
+}, askForLocation(error,response,body,sender))
 }
 
+function askForLocation(error, response, body,sender) {
+    if (error) {
+        console.log('Error sending messages: ', error)
+        sendTextMessage(sender,"Sorry, it seems something went wrong :(")
+    } else if (response.body.error) {
+        console.log('Error: ', response.body.error)
+        sendTextMessage(sender,"Sorry, it seems something went wrong :(")
+    }
+    sendLocationButton(sender)
+}
+
+
+function sendLocationButton(sender){
+    let messageData = {
+        "text": "Please share your location:",
+        "quick_replies":[
+            {
+                "content_type":"location",
+            }
+        ]
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
 
 function sendPriceRangeButton(sender) {
     let messageData = {
@@ -134,7 +165,7 @@ function sendPriceRangeButton(sender) {
                     },
                     {
                         "type":"postback",
-                        "title":"Doesn't Matter",
+                        "title":"Doesn't matter",
                         "payload":"2"
                     },
                     {

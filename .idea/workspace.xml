@@ -21,20 +21,17 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="95" column="40" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
+            <state relative-caret-position="20">
+              <caret line="117" column="73" lean-forward="false" selection-start-line="117" selection-start-column="73" selection-end-line="117" selection-end-column="73" />
               <folding>
                 <element signature="e#632#677#0" expanded="false" />
                 <element signature="e#750#920#0" expanded="false" />
                 <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
+                <element signature="e#2542#3138#0" expanded="false" />
                 <element signature="e#3151#3336#0" expanded="false" />
-                <element signature="e#3370#3541#0" expanded="false" />
-                <element signature="e#3387#3449#0" expanded="false" />
-                <element signature="e#3480#3539#0" expanded="false" />
-                <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-                <element signature="e#4404#4625#0" expanded="false" />
-                <element signature="e#4680#4750#0" expanded="false" />
-                <element signature="e#4781#4848#0" expanded="false" />
+                <element signature="e#5340#5561#0" expanded="false" />
+                <element signature="e#5616#5686#0" expanded="false" />
+                <element signature="e#5717#5784#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -575,12 +572,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485238797133</updated>
-      <workItem from="1485238799310" duration="5272000" />
+      <workItem from="1485238799310" duration="5920000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5272000" />
+    <option name="totallyTimeSpent" value="5920000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -630,12 +627,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.js</url>
-          <line>121</line>
+          <line>107</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -670,20 +667,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="95" column="40" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
+        <state relative-caret-position="20">
+          <caret line="117" column="73" lean-forward="false" selection-start-line="117" selection-start-column="73" selection-end-line="117" selection-end-column="73" />
           <folding>
             <element signature="e#632#677#0" expanded="false" />
             <element signature="e#750#920#0" expanded="false" />
             <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
+            <element signature="e#2542#3138#0" expanded="false" />
             <element signature="e#3151#3336#0" expanded="false" />
-            <element signature="e#3370#3541#0" expanded="false" />
-            <element signature="e#3387#3449#0" expanded="false" />
-            <element signature="e#3480#3539#0" expanded="false" />
-            <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-            <element signature="e#4404#4625#0" expanded="false" />
-            <element signature="e#4680#4750#0" expanded="false" />
-            <element signature="e#4781#4848#0" expanded="false" />
+            <element signature="e#5340#5561#0" expanded="false" />
+            <element signature="e#5616#5686#0" expanded="false" />
+            <element signature="e#5717#5784#0" expanded="false" />
           </folding>
         </state>
       </provider>
