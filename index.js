@@ -93,7 +93,7 @@ function sendStartMessage(sender) {
                         "payload":"hungry"
                     },
                     {
-                        "type":"web_url",
+                        "type":"postback",
                         "title":"Nope",
                         "payload":"notHungry"
                     }
@@ -129,7 +129,7 @@ function sendPriceRangeButton(sender) {
                 "buttons":[
                     {
                         "type":"postback",
-                        "title":"Cheap, but not too cheap",
+                        "title":"Cheapest please!",
                         "payload":"1"
                     },
                     {
@@ -139,7 +139,7 @@ function sendPriceRangeButton(sender) {
                     },
                     {
                         "type":"postback",
-                        "title":"Going to treat myself a bit",
+                        "title":"Treating myself",
                         "payload":"3"
                     }
                 ]
