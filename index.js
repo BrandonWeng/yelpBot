@@ -119,11 +119,11 @@ json: {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         }
-        askForLocation(sender)
+        sendLocationButton(sender)
     })
 }
 
-function askForLocation(sender) {
+function sendLocationButton(sender) {
     let messageData = {
         "text": "Please share your location:",
         "quick_replies":[
