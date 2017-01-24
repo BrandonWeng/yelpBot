@@ -21,17 +21,9 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="151" column="26" lean-forward="false" selection-start-line="151" selection-start-column="26" selection-end-line="151" selection-end-column="47" />
-              <folding>
-                <element signature="e#632#677#0" expanded="false" />
-                <element signature="e#750#920#0" expanded="false" />
-                <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
-                <element signature="e#3029#3214#0" expanded="false" />
-                <element signature="e#3268#3338#0" expanded="false" />
-                <element signature="n#!!block;n#sendLocationButton#0" expanded="false" />
-                <element signature="e#4934#5155#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="479">
+              <caret line="193" column="1" lean-forward="true" selection-start-line="193" selection-start-column="1" selection-end-line="193" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -572,12 +564,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485238797133</updated>
-      <workItem from="1485238799310" duration="7119000" />
+      <workItem from="1485238799310" duration="7425000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7119000" />
+    <option name="totallyTimeSpent" value="7425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -624,14 +616,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/index.js</url>
-          <line>105</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
@@ -667,17 +651,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="151" column="26" lean-forward="false" selection-start-line="151" selection-start-column="26" selection-end-line="151" selection-end-column="47" />
-          <folding>
-            <element signature="e#632#677#0" expanded="false" />
-            <element signature="e#750#920#0" expanded="false" />
-            <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
-            <element signature="e#3029#3214#0" expanded="false" />
-            <element signature="e#3268#3338#0" expanded="false" />
-            <element signature="n#!!block;n#sendLocationButton#0" expanded="false" />
-            <element signature="e#4934#5155#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="479">
+          <caret line="193" column="1" lean-forward="true" selection-start-line="193" selection-start-column="1" selection-end-line="193" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -85,29 +85,35 @@ function sendTextMessage(sender, text) {
 
 function sendStartMessage(sender) {
     let messageData = {
-        "text": "Hey! Are you hungry?",
-        "quick_replies":[
-            {
-                "content_type":"text",
-                "title":"Yes!",
-                "payload":"Hungry"
-            },
-            {
-                "content_type":"text",
-                "title":"Nope",
-                "payload":"NotHungry"
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "button",
+                "text":"Hey! are you hungry?",
+                "buttons":[
+                    {
+                        "type":"postback",
+                        "title":"Yes!",
+                        "payload":"hungry"
+                    },
+                    {
+                        "type":"postback",
+                        "title":"Nope",
+                        "payload":"notHungry"
+                    }
+                ]
             }
-        ]
+        }
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
         method: 'POST',
-json: {
-    recipient: {id:sender},
-    message: messageData,
-}
-},function(error, response, body) {
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    },function(error, response, body) {
         if (error) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
@@ -145,29 +151,30 @@ function sendLocationButton(sender) {
 
 function sendPriceRangeButton(sender) {
     let messageData = {
-        "text": "Awesome! Whats your budget?",
-        "quick_replies":[
-            {
-                "content_type":"text",
-                "title":"Still have some Change",
-                "payload":"Hungry"
-            },
-            {
-                "content_type":"text",
-                "title":"A decent meal",
-                "payload":"NotHungry"
-            },
-            {
-                "content_type":"text",
-                "title":"A bit above average",
-                "payload":"NotHungry"
-            },
-            {
-                "content_type":"text",
-                "title":"It's Payday!",
-                "payload":"NotHungry"
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "button",
+                "text":"Cool! What's the budget?",
+                "buttons":[
+                    {
+                        "type":"postback",
+                        "title":"Cheapest please!",
+                        "payload":"1"
+                    },
+                    {
+                        "type":"postback",
+                        "title":"Doesn't matter",
+                        "payload":"2"
+                    },
+                    {
+                        "type":"postback",
+                        "title":"Treating myself",
+                        "payload":"3"
+                    }
+                ]
             }
-        ]
+        }
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -185,4 +192,3 @@ function sendPriceRangeButton(sender) {
         }
     })
 }
-
