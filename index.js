@@ -134,18 +134,13 @@ function sendPriceRangeButton(sender) {
                     },
                     {
                         "type":"postback",
-                        "title":"Give me the average",
+                        "title":"Doesn't Matter",
                         "payload":"2"
                     },
                     {
                         "type":"postback",
-                        "title":"Treat myself a bit tonight",
+                        "title":"Going to treat myself a bit",
                         "payload":"3"
-                    },
-                    {
-                        "type":"postback",
-                        "title":"It's payday!",
-                        "payload":"4"
                     }
                 ]
             }

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1803c39a-28d4-48eb-8ff6-450d01cbe478" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Brandon.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Brandon.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
@@ -22,8 +21,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="49" column="24" lean-forward="false" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+            <state relative-caret-position="479">
+              <caret line="142" column="36" lean-forward="false" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
               <folding>
                 <element signature="e#632#677#0" expanded="false" />
                 <element signature="e#750#920#0" expanded="false" />
@@ -34,10 +33,9 @@
                 <element signature="e#3369#3540#0" expanded="false" />
                 <element signature="e#3386#3448#0" expanded="false" />
                 <element signature="e#3479#3538#0" expanded="false" />
-                <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-                <element signature="e#4601#4822#0" expanded="false" />
-                <element signature="e#4877#4947#0" expanded="false" />
-                <element signature="e#4978#5045#0" expanded="false" />
+                <element signature="e#4423#4644#0" expanded="false" />
+                <element signature="e#4699#4769#0" expanded="false" />
+                <element signature="e#4800#4867#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -578,12 +576,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485238797133</updated>
-      <workItem from="1485238799310" duration="4853000" />
+      <workItem from="1485238799310" duration="5113000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4853000" />
+    <option name="totallyTimeSpent" value="5113000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -665,8 +663,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="49" column="24" lean-forward="false" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+        <state relative-caret-position="479">
+          <caret line="142" column="36" lean-forward="false" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
           <folding>
             <element signature="e#632#677#0" expanded="false" />
             <element signature="e#750#920#0" expanded="false" />
@@ -677,10 +675,9 @@
             <element signature="e#3369#3540#0" expanded="false" />
             <element signature="e#3386#3448#0" expanded="false" />
             <element signature="e#3479#3538#0" expanded="false" />
-            <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-            <element signature="e#4601#4822#0" expanded="false" />
-            <element signature="e#4877#4947#0" expanded="false" />
-            <element signature="e#4978#5045#0" expanded="false" />
+            <element signature="e#4423#4644#0" expanded="false" />
+            <element signature="e#4699#4769#0" expanded="false" />
+            <element signature="e#4800#4867#0" expanded="false" />
           </folding>
         </state>
       </provider>
