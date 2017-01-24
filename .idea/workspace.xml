@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1803c39a-28d4-48eb-8ff6-450d01cbe478" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-    </list>
+    <list default="true" id="1803c39a-28d4-48eb-8ff6-450d01cbe478" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,17 +18,18 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="117" column="73" lean-forward="false" selection-start-line="117" selection-start-column="73" selection-end-line="117" selection-end-column="73" />
+            <state relative-caret-position="421">
+              <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
               <folding>
                 <element signature="e#632#677#0" expanded="false" />
                 <element signature="e#750#920#0" expanded="false" />
                 <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
-                <element signature="e#2542#3138#0" expanded="false" />
-                <element signature="e#3151#3336#0" expanded="false" />
-                <element signature="e#5340#5561#0" expanded="false" />
-                <element signature="e#5616#5686#0" expanded="false" />
-                <element signature="e#5717#5784#0" expanded="false" />
+                <element signature="e#2661#3257#0" expanded="false" />
+                <element signature="e#3270#3455#0" expanded="false" />
+                <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
+                <element signature="e#5456#5677#0" expanded="false" />
+                <element signature="e#5732#5802#0" expanded="false" />
+                <element signature="e#5833#5900#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -572,12 +570,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485238797133</updated>
-      <workItem from="1485238799310" duration="5920000" />
+      <workItem from="1485238799310" duration="5988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5920000" />
+    <option name="totallyTimeSpent" value="5988000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -627,7 +625,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.js</url>
-          <line>107</line>
+          <line>111</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -667,17 +665,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="117" column="73" lean-forward="false" selection-start-line="117" selection-start-column="73" selection-end-line="117" selection-end-column="73" />
+        <state relative-caret-position="421">
+          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
           <folding>
             <element signature="e#632#677#0" expanded="false" />
             <element signature="e#750#920#0" expanded="false" />
             <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
-            <element signature="e#2542#3138#0" expanded="false" />
-            <element signature="e#3151#3336#0" expanded="false" />
-            <element signature="e#5340#5561#0" expanded="false" />
-            <element signature="e#5616#5686#0" expanded="false" />
-            <element signature="e#5717#5784#0" expanded="false" />
+            <element signature="e#2661#3257#0" expanded="false" />
+            <element signature="e#3270#3455#0" expanded="false" />
+            <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
+            <element signature="e#5456#5677#0" expanded="false" />
+            <element signature="e#5732#5802#0" expanded="false" />
+            <element signature="e#5833#5900#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -49,6 +49,10 @@ function messageRecieved(req, res) {
                 sendPriceRangeButton(sender)
                 continue
             }
+            if (text == 'Location'){
+                sendLocationButton(sender)
+                continue
+            }
             sendTextMessage(sender, "Testing Postbacks!")
         }
         if (event.postback) {
