@@ -61,7 +61,7 @@ function messageRecieved(req, res) {
                     sendLocationButton(sender)
                     continue
                 }
-                sendTextMessage(sender, "Sorry I don't understand that. Please enter 'start' or 'hungry' to begin")
+                sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' or 'hungry' to begin :)")
             }
             if (event.message && event.message.attachments){
                 let location = event.message.attachments[0].payload.coordinates
@@ -266,11 +266,7 @@ function sendResturants(sender,resturants) {
                         "buttons": [{
                             "type": "web_url",
                             "url": resturants.businesses[0].url,
-                            "title": "See more"
-                        }, {
-                            "type": "postback",
-                            "title": "Postback",
-                            "payload": "first resturant",
+                            "title": "More Information"
                         }]},
                         {
                             "title": resturants.businesses[1].name,
@@ -278,11 +274,7 @@ function sendResturants(sender,resturants) {
                             "buttons": [{
                                 "type": "web_url",
                                 "url": resturants.businesses[1].url,
-                                "title": "See more"
-                            }, {
-                                "type": "postback",
-                                "title": "Postback",
-                                "payload": "second resturant",
+                                "title": "More Information"
                             }]
                         }, {
                             "title": resturants.businesses[2].name,
@@ -291,10 +283,6 @@ function sendResturants(sender,resturants) {
                                 "type": "web_url",
                                 "url": resturants.businesses[2].url,
                                 "title": "See more"
-                            }, {
-                                "type": "postback",
-                                "title": "Postback",
-                                "payload": "first resturant",
                             }]
                         }]
                 }
