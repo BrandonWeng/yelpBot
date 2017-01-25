@@ -51,13 +51,13 @@ function messageRecieved(req, res) {
                 sendPriceRangeButton(sender)
                 continue
             }
-            if (text == 'Location'){
+            if (text == 'location'){
                 console.log("Sending Location Button")
                 sendLocationButton(sender)
                 continue
             }
             sendTextMessage(sender, "Testing Postbacks!")
-            console.log("Event: " + JSON.stringify(event.message))
+            console.log("Event: " + JSON.stringify(event))
         }
         if (event.postback) {
             let text = event.postback.payload
