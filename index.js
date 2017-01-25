@@ -57,6 +57,7 @@ function messageRecieved(req, res) {
                 continue
             }
             sendTextMessage(sender, "Testing Postbacks!")
+            console.log("This is an event :" + event)
         }
         else if (event.postback) {
             let text = event.postback.payload
