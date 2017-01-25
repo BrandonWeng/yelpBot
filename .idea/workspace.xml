@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1803c39a-28d4-48eb-8ff6-450d01cbe478" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,18 +17,42 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="269" column="25" lean-forward="false" selection-start-line="269" selection-start-column="25" selection-end-line="269" selection-end-column="25" />
+            <state relative-caret-position="-898">
+              <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
               <folding>
-                <element signature="e#793#963#0" expanded="false" />
-                <element signature="e#1027#1070#0" expanded="false" />
+                <element signature="e#625#795#0" expanded="false" />
+                <element signature="e#859#902#0" expanded="false" />
+                <element signature="n#!!block;n#messageRecieved#0" expanded="false" />
                 <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
                 <element signature="n#!!block;n#sendStartButton#0" expanded="false" />
+                <element signature="n#!!block;n#sendLocationButton#0" expanded="false" />
                 <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
+                <element signature="n#!!block;n#yelpSearched#0" expanded="false" />
+                <element signature="n#!!block;n#sendResturants#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fbconfig.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fbconfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="80" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,6 +68,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -67,6 +97,8 @@
       <list>
         <option value="$PROJECT_DIR$/yelp.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/config.js" />
+        <option value="$PROJECT_DIR$/fbconfig.js" />
       </list>
     </option>
   </component>
@@ -537,12 +569,12 @@
       <updated>1485238797133</updated>
       <workItem from="1485238799310" duration="9224000" />
       <workItem from="1485306427565" duration="564000" />
-      <workItem from="1485325044057" duration="12463000" />
+      <workItem from="1485325044057" duration="12738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22251000" />
+    <option name="totallyTimeSpent" value="22526000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -618,15 +650,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="269" column="25" lean-forward="false" selection-start-line="269" selection-start-column="25" selection-end-line="269" selection-end-column="25" />
+        <state relative-caret-position="-898">
+          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
           <folding>
-            <element signature="e#793#963#0" expanded="false" />
-            <element signature="e#1027#1070#0" expanded="false" />
+            <element signature="e#625#795#0" expanded="false" />
+            <element signature="e#859#902#0" expanded="false" />
+            <element signature="n#!!block;n#messageRecieved#0" expanded="false" />
             <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendStartButton#0" expanded="false" />
+            <element signature="n#!!block;n#sendLocationButton#0" expanded="false" />
             <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
+            <element signature="n#!!block;n#yelpSearched#0" expanded="false" />
+            <element signature="n#!!block;n#sendResturants#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbconfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

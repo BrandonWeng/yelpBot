@@ -1,5 +1,5 @@
 'use strict'
-const token = "EAAaGpOO0SCEBACKheumfl9Pz72WD4ZAE1deRl0OQZB7BnFNlegbSLJJIDE9IfJRTLjZCcLAke88GdChPyzfjHtK5cgaJkj9qAYIcsaoSZCt108wDD5N7W6oQg2klxXfV2rYHSkcIRhbZAH9CT66ZB22QyoEuHZAguE2fvtsEvhtUwZDZD"
+const token = "./fbconfig"
 console.log("Messenger Bot is starting...")
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -234,7 +234,7 @@ function yelpSearched(longitude,latitude,pricePreference,sender){
 
     var yelpSearch = {
         term: 'food',
-        //category_filter:'food' ,
+        category_filter:'food' ,
         //location: location,
         longitude:longitude,
         latitude:latitude,
