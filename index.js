@@ -40,11 +40,6 @@ function messageRecieved(req, res) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
         if (sender != '680930332088116') {
-            if (event.message.attachments[0] && event.message.attachments[0].payload.coordinates ){
-                let lat = event.message.attachments[0].payload.coordinates.lat
-                let long = event.message.attachments[0].payload.coordinates.long
-                console.log("LAT: "+ lat + "LONG : " + long)
-            }
             if (event.message && event.message.text) {
                 let text = event.message.text
                 if (text === 'Start') {
@@ -63,6 +58,9 @@ function messageRecieved(req, res) {
                     continue
                 }
                 sendTextMessage(sender, "Testing Postbacks!")
+            }
+            if (event.message && event.message.attachments){
+                console.log(JSON.stringify(event.message.attachments))
             }
             if (event.postback) {
                 let text = event.postback.payload
