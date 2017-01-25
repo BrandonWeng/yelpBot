@@ -301,6 +301,8 @@ function sendResturants(sender,resturants) {
                 console.log('Error sending messages: ', error)
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error)
+            } else {
+                sendTextMessage(sender,"Here are some places you can get food at. Sorry if it's not what you were looking for :(")
             }
         })
     }

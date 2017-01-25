@@ -21,8 +21,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="193" lean-forward="false" selection-start-line="1" selection-start-column="193" selection-end-line="1" selection-end-column="193" />
+            <state relative-caret-position="629">
+              <caret line="304" column="128" lean-forward="false" selection-start-line="304" selection-start-column="128" selection-end-line="304" selection-end-column="128" />
               <folding>
                 <element signature="e#793#963#0" expanded="false" />
                 <element signature="e#1027#1070#0" expanded="false" />
@@ -31,8 +31,6 @@
                 <element signature="n#!!block;n#sendStartButton#0" expanded="false" />
                 <element signature="n#!!block;n#sendLocationButton#0" expanded="false" />
                 <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-                <element signature="n#!!block;n#yelpSearched#0" expanded="false" />
-                <element signature="n#!!block;n#sendResturants#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -560,12 +558,12 @@
       <updated>1485238797133</updated>
       <workItem from="1485238799310" duration="9224000" />
       <workItem from="1485306427565" duration="564000" />
-      <workItem from="1485325044057" duration="13088000" />
+      <workItem from="1485325044057" duration="13474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22876000" />
+    <option name="totallyTimeSpent" value="23262000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -587,7 +585,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123931624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -657,8 +655,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="193" lean-forward="false" selection-start-line="1" selection-start-column="193" selection-end-line="1" selection-end-column="193" />
+        <state relative-caret-position="629">
+          <caret line="304" column="128" lean-forward="false" selection-start-line="304" selection-start-column="128" selection-end-line="304" selection-end-column="128" />
           <folding>
             <element signature="e#793#963#0" expanded="false" />
             <element signature="e#1027#1070#0" expanded="false" />
@@ -667,8 +665,6 @@
             <element signature="n#!!block;n#sendStartButton#0" expanded="false" />
             <element signature="n#!!block;n#sendLocationButton#0" expanded="false" />
             <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-            <element signature="n#!!block;n#yelpSearched#0" expanded="false" />
-            <element signature="n#!!block;n#sendResturants#0" expanded="false" />
           </folding>
         </state>
       </provider>
