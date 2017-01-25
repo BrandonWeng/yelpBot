@@ -8,5 +8,5 @@ Todo:
 	[ ] Clean up code
 	[ ] Split things up into modules
 	[x] Change name of page
-	[ ] privacy policy pages
-	[ ] app icon 1024x1024
+	[x] privacy policy pages
+	[x] app icon 1024x1024
