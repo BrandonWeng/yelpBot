@@ -39,37 +39,39 @@ function messageRecieved(req, res) {
     for (let i = 0; i < messaging_events.length; i++) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
-        if (event.message && event.message.text) {
-            let text = event.message.text
-            if (text === 'Start') {
-                console.log("Sending Start Button")
-                sendStartMessage(sender)
+        if (sender != '680930332088116') {
+            if (event.message && event.message.text) {
+                let text = event.message.text
+                if (text === 'Start') {
+                    console.log("Sending Start Button")
+                    sendStartMessage(sender)
+                    continue
+                }
+                if (text === 'Price') {
+                    console.log("Sending Price Button")
+                    sendPriceRangeButton(sender)
+                    continue
+                }
+                if (text == 'location') {
+                    console.log("Sending Location Button")
+                    sendLocationButton(sender)
+                    continue
+                }
+                sendTextMessage(sender, "Testing Postbacks!")
+                console.log("Event: " + JSON.stringify(event))
+            }
+            if (event.postback) {
+                let text = event.postback.payload
+                if (text === 'hungry') {
+                    sendLocationButton(sender)
+                    continue
+                } else if (text === 'notHungry') {
+                    sendTextMessage(sender, "awww... I'll be waiting then :(")
+                    continue
+                }
+                sendTextMessage(sender, "Testing! " + text)
                 continue
             }
-            if (text === 'Price'){
-                console.log("Sending Price Button")
-                sendPriceRangeButton(sender)
-                continue
-            }
-            if (text == 'location'){
-                console.log("Sending Location Button")
-                sendLocationButton(sender)
-                continue
-            }
-            sendTextMessage(sender, "Testing Postbacks!")
-            console.log("Event: " + JSON.stringify(event))
-        }
-        if (event.postback) {
-            let text = event.postback.payload
-            if (text === 'hungry') {
-                sendLocationButton(sender)
-                continue
-            } else if (text === 'notHungry') {
-                sendTextMessage(sender, "awww... I'll be waiting then :(")
-                continue
-            }
-            sendTextMessage(sender, "Testing! " + text)
-            continue
         }
     }
     res.sendStatus(200)
