@@ -46,7 +46,7 @@ function messageRecieved(req, res) {
         if (sender != '680930332088116') {
             if (event.message && event.message.text) {
                 let text = event.message.text
-                if (text === 'Start') {
+                if (text === 'Start' || text ==='start' || text ==='hungry' || text === 'Hungry'){
                     console.log("Sending Start Button")
                     sendStartButton(sender)
                     continue
@@ -61,7 +61,7 @@ function messageRecieved(req, res) {
                     sendLocationButton(sender)
                     continue
                 }
-                sendTextMessage(sender, "Testing Postbacks!")
+                sendTextMessage(sender, "Sorry I don't understand that. Please enter 'start' or 'hungry' to begin")
             }
             if (event.message && event.message.attachments){
                 let location = event.message.attachments[0].payload.coordinates
@@ -84,14 +84,13 @@ function messageRecieved(req, res) {
                     continue
                 } else if (text === '2'){
                     price = '2'
-                    yelpSearched(long,lat,prices,sender)
+                    yelpSearched(long,lat,price,sender)
                     continue
                 } else if (text == '3'){
                     price = '3'
                     yelpSearched(long,lat,price,sender)
                     continue
                 }
-                sendTextMessage(sender, "Testing! " + text)
                 continue
             }
         }
@@ -251,7 +250,6 @@ function yelpSearched(longitude,latitude,pricePreference,sender){
     function printYelp(err,data){
         if (err) return console.error("Yelp, Something went wrong! :" + err);
         console.log(JSON.parse(data));
-        console.log(JSON.parse(data).businesses[0])
         sendResturants(sender,JSON.parse(data))
     }
 }
@@ -263,11 +261,11 @@ function sendResturants(sender,resturants) {
                 "payload": {
                     "template_type": "generic",
                     "elements": [{
-                        "title": resturants[1].name,
-                        "image_url": resturants[1].image_url,
+                        "title": resturants.businesses[0].name,
+                        "image_url": resturants.businesses[0].image_url,
                         "buttons": [{
                             "type": "web_url",
-                            "url": resturants[1].url,
+                            "url": resturants.businesses[0].url,
                             "title": "See more"
                         }, {
                             "type": "postback",
@@ -275,11 +273,11 @@ function sendResturants(sender,resturants) {
                             "payload": "first resturant",
                         }]},
                         {
-                            "title": resturants[2].name,
-                            "image_url": resturants[2].image_url,
+                            "title": resturants.businesses[1].name,
+                            "image_url": resturants.businesses[1].image_url,
                             "buttons": [{
                                 "type": "web_url",
-                                "url": resturants[2].url,
+                                "url": resturants.businesses[1].url,
                                 "title": "See more"
                             }, {
                                 "type": "postback",
@@ -287,11 +285,11 @@ function sendResturants(sender,resturants) {
                                 "payload": "second resturant",
                             }]
                         }, {
-                            "title": resturants[3].name,
-                            "image_url": resturants[3].image_url,
+                            "title": resturants.businesses[2].name,
+                            "image_url": resturants.businesses[2].image_url,
                             "buttons": [{
                                 "type": "web_url",
-                                "url": resturants[3].url,
+                                "url": resturants.businesses[2].url,
                                 "title": "See more"
                             }, {
                                 "type": "postback",
