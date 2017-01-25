@@ -35,6 +35,7 @@ app.listen(app.get('port'), function() {
 app.post('/webhook/',  messageRecieved);
 
 function messageRecieved(req, res) {
+    console.log(JSON.parse(res))
     let messaging_events = req.body.entry[0].messaging
     for (let i = 0; i < messaging_events.length; i++) {
         let event = req.body.entry[0].messaging[i]
@@ -58,7 +59,6 @@ function messageRecieved(req, res) {
                     continue
                 }
                 sendTextMessage(sender, "Testing Postbacks!")
-                console.log("Event: " + JSON.stringify(event))
             }
             if (event.postback) {
                 let text = event.postback.payload
@@ -157,8 +157,6 @@ function sendLocationButton(sender) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
             console.log('Error: ', response.body)
-        } else {
-            console.log("Please work! :" + JSON.stringify(body))
         }
     })
 }
