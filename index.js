@@ -80,12 +80,15 @@ function messageRecieved(req, res) {
                     continue
                 } else if (text === '1'){
                     price = '1'
+                    yelpSearched(long,lat,price)
                     continue
                 } else if (text === '2'){
                     price = '2'
+                    yelpSearched(long,lat,price)
                     continue
                 } else if (text == '3'){
                     price = '3'
+                    yelpSearched(long,lat,price)
                     continue
                 }
                 sendTextMessage(sender, "Testing! " + text)
@@ -224,3 +227,29 @@ function sendPriceRangeButton(sender) {
     })
 }
 
+
+var Yelp = require('yelp-api-v3');
+var yelp = new Yelp(require('./config'));
+
+function yelpSearched(longitude,latitude,pricePreference){
+
+    var yelpSearch = {
+        term: 'food',
+        //category_filter:'food' ,
+        //location: location,
+        longitude:longitude,
+        latitude:latitude,
+        limit:'5',
+        sort:'2',
+        is_closed:'false',
+        price: pricePreference,
+        open_now:'true'
+    };
+
+    yelp.search(yelpSearch,printYelp);
+
+    function printYelp(err,data){
+        if (err) return console.error("Yelp, Something went wrong! :" + err);
+        console.log(JSON.parse(data));
+    }
+}
