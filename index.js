@@ -60,15 +60,16 @@ function messageRecieved(req, res) {
         }
         else if (event.postback) {
             let text = event.postback.payload
-            if (text === 'hungry'){
+            if (text === 'hungry') {
                 sendLocationButton(sender)
                 continue
-            } else if(text === 'notHungry'){
-                sendTextMessage(sender,"awww... I'll be waiting then :(")
+            } else if (text === 'notHungry') {
+                sendTextMessage(sender, "awww... I'll be waiting then :(")
                 continue
             }
-            sendTextMessage(sender,"Testing! " + text)
+            sendTextMessage(sender, "Testing! " + text)
             continue
+        }
     }
     res.sendStatus(200)
 }
