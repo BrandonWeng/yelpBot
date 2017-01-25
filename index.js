@@ -57,7 +57,7 @@ function messageRecieved(req, res) {
                 continue
             }
             sendTextMessage(sender, "Testing Postbacks!")
-            console.log("Event: " + JSON.stringify(event.message.attachments))
+            console.log("Event: " + JSON.stringify(event.message))
         }
         if (event.postback) {
             let text = event.postback.payload
@@ -155,8 +155,6 @@ function sendLocationButton(sender) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
-        } else {
-            console.log("Interesting" + JSON.stringify(response))
         }
 
     })
