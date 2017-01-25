@@ -60,7 +60,7 @@ function messageRecieved(req, res) {
                 sendTextMessage(sender, "Testing Postbacks!")
             }
             if (event.message && event.message.attachments){
-                console.log(JSON.stringify(event.message.attachments.payload))
+                console.log(JSON.stringify(event.message.attachments[0].payload.coordinates))
             }
             if (event.postback) {
                 let text = event.postback.payload
