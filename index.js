@@ -42,14 +42,17 @@ function messageRecieved(req, res) {
         if (event.message && event.message.text) {
             let text = event.message.text
             if (text === 'Start') {
+                console.log("Sending Start Button")
                 sendStartMessage(sender)
                 continue
             }
             if (text === 'Price'){
+                console.log("Sending Price Button")
                 sendPriceRangeButton(sender)
                 continue
             }
             if (text == 'Location'){
+                console.log("Sending Location Button")
                 sendLocationButton(sender)
                 continue
             }
@@ -66,7 +69,10 @@ function messageRecieved(req, res) {
             }
             sendTextMessage(sender,"Testing! " + text)
             continue
+        } else {
+            console.log(event)
         }
+
     }
     res.sendStatus(200)
 }
@@ -152,7 +158,7 @@ function sendLocationButton(sender) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         } else {
-            console.log("Location recieved : " + JSON.stringify(response))
+            console.log("Location recieved : " + response.body.entry[0])
         }
 
     })
