@@ -21,17 +21,14 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="188" lean-forward="false" selection-start-line="1" selection-start-column="188" selection-end-line="1" selection-end-column="188" />
+            <state relative-caret-position="145">
+              <caret line="65" column="75" lean-forward="false" selection-start-line="65" selection-start-column="75" selection-end-line="65" selection-end-column="75" />
               <folding>
                 <element signature="e#788#958#0" expanded="false" />
                 <element signature="e#1022#1065#0" expanded="false" />
-                <element signature="n#!!block;n#messageRecieved#0" expanded="false" />
                 <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
-                <element signature="n#!!block;n#sendStartButton#0" expanded="false" />
                 <element signature="n#!!block;n#sendLocationButton#0" expanded="false" />
                 <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-                <element signature="n#!!block;n#yelpSearched#0" expanded="false" />
                 <element signature="n#!!block;n#sendResturants#0" expanded="false" />
               </folding>
             </state>
@@ -73,6 +70,7 @@
       <find>error</find>
       <find>app.get</find>
       <find>your location</find>
+      <find>long</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -560,12 +558,12 @@
       <updated>1485238797133</updated>
       <workItem from="1485238799310" duration="9224000" />
       <workItem from="1485306427565" duration="564000" />
-      <workItem from="1485325044057" duration="13714000" />
+      <workItem from="1485325044057" duration="14066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23502000" />
+    <option name="totallyTimeSpent" value="23854000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,7 +610,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.js</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.js</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -657,17 +669,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="188" lean-forward="false" selection-start-line="1" selection-start-column="188" selection-end-line="1" selection-end-column="188" />
+        <state relative-caret-position="145">
+          <caret line="65" column="75" lean-forward="false" selection-start-line="65" selection-start-column="75" selection-end-line="65" selection-end-column="75" />
           <folding>
             <element signature="e#788#958#0" expanded="false" />
             <element signature="e#1022#1065#0" expanded="false" />
-            <element signature="n#!!block;n#messageRecieved#0" expanded="false" />
             <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
-            <element signature="n#!!block;n#sendStartButton#0" expanded="false" />
             <element signature="n#!!block;n#sendLocationButton#0" expanded="false" />
             <element signature="n#!!block;n#sendPriceRangeButton#0" expanded="false" />
-            <element signature="n#!!block;n#yelpSearched#0" expanded="false" />
             <element signature="n#!!block;n#sendResturants#0" expanded="false" />
           </folding>
         </state>

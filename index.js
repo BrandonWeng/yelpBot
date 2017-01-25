@@ -63,7 +63,7 @@ function messageRecieved(req, res) {
                 }
                 sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' or 'hungry' to begin :)")
             }
-            if (event.message && event.message.attachments){
+            if (event.message && event.message.attachments && event.payload){
                 let location = event.message.attachments[0].payload.coordinates
                 console.log(JSON.stringify(location))
                 long = location.long
@@ -80,15 +80,15 @@ function messageRecieved(req, res) {
                     continue
                 } else if (text === '1'){
                     price = '1'
-                    yelpSearched(long,lat,price,sender)
+                    yelpSearched(price,sender)
                     continue
                 } else if (text === '2'){
                     price = '2'
-                    yelpSearched(long,lat,price,sender)
+                    yelpSearched(price,sender)
                     continue
                 } else if (text == '3'){
                     price = '3'
-                    yelpSearched(long,lat,price,sender)
+                    yelpSearched(price,sender)
                     continue
                 }
                 continue
@@ -230,14 +230,14 @@ function sendPriceRangeButton(sender) {
 var Yelp = require('yelp-api-v3');
 var yelp = new Yelp(require('./config'));
 
-function yelpSearched(longitude,latitude,pricePreference,sender){
+function yelpSearched(pricePreference,sender){
 
     var yelpSearch = {
         term: 'food',
         category_filter:'food' ,
         //location: location,
-        longitude:longitude,
-        latitude:latitude,
+        longitude:long,
+        latitude:lat,
         limit:'3',
         sort:'2',
         is_closed:'false',
