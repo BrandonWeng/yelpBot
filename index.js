@@ -302,7 +302,7 @@ function sendResturants(sender,resturants) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         } else {
-            sendTextMessage(sender,"Here are some places you can get food at. Sorry if it's not what you were looking for :(")
+            sendTextMessage(sender,"Here are some places you can get food at. These resturants should be open. Sorry if it's not what you were looking for :(")
         }
     })
 }
