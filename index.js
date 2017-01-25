@@ -63,7 +63,7 @@ function messageRecieved(req, res) {
                 }
                 sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' or 'hungry' to begin :)")
             }
-            if (event.message && event.message.attachments){
+            if (event.message && event.message.attachments && event.message.attachments[0].payload.coordinates){
                 let location = event.message.attachments[0].payload.coordinates
                 console.log(JSON.stringify(location))
                 long = location.long
