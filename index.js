@@ -155,7 +155,7 @@ function sendLocationButton(sender) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         } else {
-            console.log("Interesting" + response.body)
+            console.log("Interesting" + JSON.stringify(response.body))
         }
 
     })
