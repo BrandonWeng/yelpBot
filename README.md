@@ -4,9 +4,9 @@ A messenger Bot that sugguests places for the user to eat
 
 Your preferences will not be shared with anyone.
 
-Todo:
-	[ ] Clean up code
-	[ ] Split things up into modules
-	[x] Change name of page
-	[x] privacy policy pages
-	[x] app icon 1024x1024
+### Todo:
+- [ ] Clean up code
+- [ ] Split things up into modules
+- [x] Change name of page
+- [x] privacy policy pages
+- [x] app icon 1024x1024df
