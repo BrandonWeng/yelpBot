@@ -5,6 +5,6 @@ A messenger Bot that sugguests places for the user to eat
 Todo:
 	[ ] Clean up code
 	[ ] Split things up into modules
-	[ ] Change name of page
+	[x] Change name of page
 	[ ] privacy policy pages
 	[ ] app icon 1024x1024
