@@ -69,10 +69,6 @@ function messageRecieved(req, res) {
             }
             sendTextMessage(sender,"Testing! " + text)
             continue
-        } else {
-            sendTextMessage(sender,"This is the EVENT: " + event)
-        }
-
     }
     res.sendStatus(200)
 }
