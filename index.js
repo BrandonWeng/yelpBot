@@ -40,11 +40,13 @@ function messageRecieved(req, res) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
         if (sender != '680930332088116') {
+            console.log("Event:"+JSON.parse(event))
+            console.log("ENTRY[0]:" + JSON.parse(req.body.entry[0]))
             if (event.message && event.message.text) {
                 let text = event.message.text
                 if (text === 'Start') {
                     console.log("Sending Start Button")
-                    sendStartMessage(sender)
+                    sendStartButton(sender)
                     continue
                 }
                 if (text === 'Price') {
@@ -95,7 +97,7 @@ function sendTextMessage(sender, text) {
     })
 }
 
-function sendStartMessage(sender) {
+function sendStartButton(sender) {
     let messageData = {
         "attachment": {
             "type": "template",
