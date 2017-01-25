@@ -58,7 +58,7 @@ function messageRecieved(req, res) {
             }
             sendTextMessage(sender, "Testing Postbacks!")
         }
-        else if (event.postback) {
+        if (event.postback) {
             let text = event.postback.payload
             if (text === 'hungry') {
                 sendLocationButton(sender)
