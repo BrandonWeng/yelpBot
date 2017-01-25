@@ -157,6 +157,8 @@ function sendLocationButton(sender) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
             console.log('Error: ', response.body)
+        } else {
+            console.log("Please work! :" + JSON.stringify(response))
         }
     })
 }
