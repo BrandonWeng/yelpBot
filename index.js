@@ -58,7 +58,7 @@ function messageRecieved(req, res) {
             }
             sendTextMessage(sender, "Testing Postbacks!")
         }
-        if (event.postback) {
+        else if (event.postback) {
             let text = event.postback.payload
             if (text === 'hungry'){
                 sendLocationButton(sender)
@@ -70,7 +70,7 @@ function messageRecieved(req, res) {
             sendTextMessage(sender,"Testing! " + text)
             continue
         } else {
-            console.log(event)
+            sendTextMessage(sender,"This is the EVENT: " + event)
         }
 
     }
@@ -158,7 +158,7 @@ function sendLocationButton(sender) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         } else {
-            console.log("Location recieved : " + response.body.entry[0])
+            console.log("Interesting" + response.body)
         }
 
     })
