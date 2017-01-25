@@ -65,7 +65,7 @@ function messageRecieved(req, res) {
             }
             if (event.message && event.message.attachments){
                 let location = event.message.attachments[0].payload.coordinates
-                console.log(JSON.stringify(location))
+                console.log("Testing " + JSON.stringify(event.message))
                 long = location.long
                 lat = location.lat
                 sendPriceRangeButton(sender)
