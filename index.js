@@ -1,5 +1,5 @@
 'use strict'
-const token = "EAAaGpOO0SCEBAABxVxCnG0xGhyl8yHaA9EZA47RsmkR4iO2EZBATlbMY46C0yk047gdvcvP5oLbtZBKUUAd0Kq02N7KHZB9sOKfDUsH1DDzHWIkfhrlZC6ZCI4PSZCamXtXZC4ZBQezDcnvkhRHDeha7fwfnZCcQUz4RNYUw0MBNYZBBAZDZD"
+const token = "EAAaGpOO0SCEBACKheumfl9Pz72WD4ZAE1deRl0OQZB7BnFNlegbSLJJIDE9IfJRTLjZCcLAke88GdChPyzfjHtK5cgaJkj9qAYIcsaoSZCt108wDD5N7W6oQg2klxXfV2rYHSkcIRhbZAH9CT66ZB22QyoEuHZAguE2fvtsEvhtUwZDZD"
 console.log("Messenger Bot is starting...")
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -65,7 +65,7 @@ function messageRecieved(req, res) {
             }
             if (event.message && event.message.attachments){
                 let location = event.message.attachments[0].payload.coordinates
-                console.log("Testing " + JSON.stringify(event.message))
+                console.log(JSON.stringify(location))
                 long = location.long
                 lat = location.lat
                 sendPriceRangeButton(sender)
@@ -302,7 +302,7 @@ function sendResturants(sender,resturants) {
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         } else {
-            sendTextMessage(sender,"Here are some places that are supposed to be open. Hopefully this was what you're looking for :) . Enjoy your food !")
+            sendTextMessage(sender,"Here are some places you can get food at. Sorry if it's not what you were looking for :(")
         }
     })
 }
