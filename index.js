@@ -64,7 +64,7 @@ function messageRecieved(req, res) {
                 sendTextMessage(sender,"awww... I'll be waiting then :(")
                 continue
             }
-            sendTextMessage(sender,"Testing! " + JSON.stringify(text))
+            sendTextMessage(sender,"Testing! " + text)
             continue
         }
     }
@@ -151,8 +151,10 @@ function sendLocationButton(sender) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
+        } else {
+            console.log("Location recieved : " + JSON.stringify(response))
         }
-        console.log(response)
+
     })
 }
 
