@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1803c39a-28d4-48eb-8ff6-450d01cbe478" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="335">
-              <caret line="157" column="68" lean-forward="false" selection-start-line="157" selection-start-column="68" selection-end-line="157" selection-end-column="68" />
+              <caret line="59" column="54" lean-forward="false" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
               <folding>
                 <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
                 <element signature="n#!!block;n#sendStartMessage#0" expanded="false" />
@@ -522,12 +523,12 @@
       <updated>1485238797133</updated>
       <workItem from="1485238799310" duration="9224000" />
       <workItem from="1485306427565" duration="564000" />
-      <workItem from="1485325044057" duration="2694000" />
+      <workItem from="1485325044057" duration="2875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12482000" />
+    <option name="totallyTimeSpent" value="12663000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -603,7 +604,7 @@
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
-          <caret line="157" column="68" lean-forward="false" selection-start-line="157" selection-start-column="68" selection-end-line="157" selection-end-column="68" />
+          <caret line="59" column="54" lean-forward="false" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
           <folding>
             <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
             <element signature="n#!!block;n#sendStartMessage#0" expanded="false" />
