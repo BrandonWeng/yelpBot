@@ -6,6 +6,10 @@ const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
 
+let price = 0;
+let lat = 0;
+let long = 0;
+
 app.set('port', (process.env.PORT || 5000))
 
 // Process application/x-www-form-urlencoded
@@ -62,6 +66,8 @@ function messageRecieved(req, res) {
             if (event.message && event.message.attachments){
                 let location = event.message.attachments[0].payload.coordinates
                 console.log(JSON.stringify(location))
+                long = location.long
+                lat = location.lat
                 sendPriceRangeButton(sender)
             }
             if (event.postback) {
@@ -71,6 +77,15 @@ function messageRecieved(req, res) {
                     continue
                 } else if (text === 'notHungry') {
                     sendTextMessage(sender, "awww... I'll be waiting then :(")
+                    continue
+                } else if (text === '1'){
+                    price = '1'
+                    continue
+                } else if (text === '2'){
+                    price = '2'
+                    continue
+                } else if (text == '3'){
+                    price = '3'
                     continue
                 }
                 sendTextMessage(sender, "Testing! " + text)
