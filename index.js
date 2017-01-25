@@ -40,8 +40,8 @@ function messageRecieved(req, res) {
         let event = req.body.entry[0].messaging[i]
         let sender = event.sender.id
         if (sender != '680930332088116') {
-            console.log("Event:"+JSON.parse(event))
-            console.log("ENTRY[0]:" + JSON.parse(req.body.entry[0]))
+            console.log("Event:"+JSON.stringify(event))
+            console.log("ENTRY[0]:" + JSON.stringify(req.body.entry[0]))
             if (event.message && event.message.text) {
                 let text = event.message.text
                 if (text === 'Start') {
