@@ -32,7 +32,7 @@ app.listen(app.get('port'), function() {
     console.log('Successfully Started')
 })
 
-app.post('/webhook/', messageRecieved);
+app.post('/webhook/',  messageRecieved);
 
 function messageRecieved(req, res) {
     let messaging_events = req.body.entry[0].messaging
@@ -135,7 +135,7 @@ function sendStartMessage(sender) {
 
 function sendLocationButton(sender) {
     let messageData = {
-        "text": "Please share your location:",
+        "text": "Could I have your location please?",
         "quick_replies":[
             {
                 "content_type":"location",
@@ -155,10 +155,7 @@ function sendLocationButton(sender) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
             console.log('Error: ', response.body)
-        } else {
-            console.log("Location please ? <3 : "+JSON.stringify(response.attachment.payload))
         }
-
     })
 }
 
