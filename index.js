@@ -60,7 +60,9 @@ function messageRecieved(req, res) {
                 sendTextMessage(sender, "Testing Postbacks!")
             }
             if (event.message && event.message.attachments){
-                console.log(JSON.stringify(event.message.attachments[0].payload.coordinates))
+                let location = event.message.attachments[0].payload.coordinates
+                console.log(JSON.stringify(location))
+                sendPriceRangeButton(sender)
             }
             if (event.postback) {
                 let text = event.postback.payload
@@ -163,7 +165,6 @@ function sendLocationButton(sender) {
     })
 }
 
-
 function sendPriceRangeButton(sender) {
     let messageData = {
         "attachment": {
@@ -207,3 +208,4 @@ function sendPriceRangeButton(sender) {
         }
     })
 }
+
