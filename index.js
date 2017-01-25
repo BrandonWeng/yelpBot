@@ -1,5 +1,5 @@
 'use strict'
-const token = "EAAaGpOO0SCEBALH4EQYbZBjOzPuZC7BTOaQBpFPFiSDAwmu7cbL3k96925S4gpGR8q7ySdaTSFqAaVHNOFewXcsPGefXeKIspj2vPh4yMqS2P85hsG1UFePzK2nzaBxJSAMM8d8elmmGVmwWsRQJjNeC4qCgXc1hmQ1i1sNwZDZD"
+const token = "EAAaGpOO0SCEBACKheumfl9Pz72WD4ZAE1deRl0OQZB7BnFNlegbSLJJIDE9IfJRTLjZCcLAke88GdChPyzfjHtK5cgaJkj9qAYIcsaoSZCt108wDD5N7W6oQg2klxXfV2rYHSkcIRhbZAH9CT66ZB22QyoEuHZAguE2fvtsEvhtUwZDZD"
 console.log("Messenger Bot is starting...")
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -63,7 +63,7 @@ function messageRecieved(req, res) {
                 }
                 sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' or 'hungry' to begin :)")
             }
-            if (event.message && event.message.attachments && event.payload){
+            if (event.message && event.message.attachments){
                 let location = event.message.attachments[0].payload.coordinates
                 console.log(JSON.stringify(location))
                 long = location.long
@@ -80,15 +80,15 @@ function messageRecieved(req, res) {
                     continue
                 } else if (text === '1'){
                     price = '1'
-                    yelpSearched(price,sender)
+                    yelpSearched(long,lat,price,sender)
                     continue
                 } else if (text === '2'){
                     price = '2'
-                    yelpSearched(price,sender)
+                    yelpSearched(long,lat,price,sender)
                     continue
                 } else if (text == '3'){
                     price = '3'
-                    yelpSearched(price,sender)
+                    yelpSearched(long,lat,price,sender)
                     continue
                 }
                 continue
@@ -230,14 +230,14 @@ function sendPriceRangeButton(sender) {
 var Yelp = require('yelp-api-v3');
 var yelp = new Yelp(require('./config'));
 
-function yelpSearched(pricePreference,sender){
+function yelpSearched(longitude,latitude,pricePreference,sender){
 
     var yelpSearch = {
         term: 'food',
         category_filter:'food' ,
         //location: location,
-        longitude:long,
-        latitude:lat,
+        longitude:longitude,
+        latitude:latitude,
         limit:'3',
         sort:'2',
         is_closed:'false',
@@ -255,54 +255,54 @@ function yelpSearched(pricePreference,sender){
 }
 
 function sendResturants(sender,resturants) {
-        let messageData = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "generic",
-                    "elements": [{
-                        "title": resturants.businesses[0].name,
-                        "image_url": resturants.businesses[0].image_url,
+    let messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": resturants.businesses[0].name,
+                    "image_url": resturants.businesses[0].image_url,
+                    "buttons": [{
+                        "type": "web_url",
+                        "url": resturants.businesses[0].url,
+                        "title": "More Information"
+                    }]},
+                    {
+                        "title": resturants.businesses[1].name,
+                        "image_url": resturants.businesses[1].image_url,
                         "buttons": [{
                             "type": "web_url",
-                            "url": resturants.businesses[0].url,
+                            "url": resturants.businesses[1].url,
                             "title": "More Information"
-                        }]},
-                        {
-                            "title": resturants.businesses[1].name,
-                            "image_url": resturants.businesses[1].image_url,
-                            "buttons": [{
-                                "type": "web_url",
-                                "url": resturants.businesses[1].url,
-                                "title": "More Information"
-                            }]
-                        }, {
-                            "title": resturants.businesses[2].name,
-                            "image_url": resturants.businesses[2].image_url,
-                            "buttons": [{
-                                "type": "web_url",
-                                "url": resturants.businesses[2].url,
-                                "title": "See more"
-                            }]
                         }]
-                }
+                    }, {
+                        "title": resturants.businesses[2].name,
+                        "image_url": resturants.businesses[2].image_url,
+                        "buttons": [{
+                            "type": "web_url",
+                            "url": resturants.businesses[2].url,
+                            "title": "See more"
+                        }]
+                    }]
             }
         }
-        request({
-            url: 'https://graph.facebook.com/v2.6/me/messages',
-            qs: {access_token:token},
-            method: 'POST',
-            json: {
-                recipient: {id:sender},
-                message: messageData,
-            }
-        }, function(error, response, body) {
-            if (error) {
-                console.log('Error sending messages: ', error)
-            } else if (response.body.error) {
-                console.log('Error: ', response.body.error)
-            } else {
-                sendTextMessage(sender,"Here are some places that are supposed to be open. Hopefully this was what you're looking for :) . Enjoy your food !")
-            }
-        })
     }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        } else {
+            sendTextMessage(sender,"Here are some places that are supposed to be open. Hopefully this was what you're looking for :) . Enjoy your food !")
+        }
+    })
+}
