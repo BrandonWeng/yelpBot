@@ -1,5 +1,5 @@
 'use strict'
-const token = "EAAaGpOO0SCEBACKheumfl9Pz72WD4ZAE1deRl0OQZB7BnFNlegbSLJJIDE9IfJRTLjZCcLAke88GdChPyzfjHtK5cgaJkj9qAYIcsaoSZCt108wDD5N7W6oQg2klxXfV2rYHSkcIRhbZAH9CT66ZB22QyoEuHZAguE2fvtsEvhtUwZDZD"
+const token = "EAAaGpOO0SCEBAABxVxCnG0xGhyl8yHaA9EZA47RsmkR4iO2EZBATlbMY46C0yk047gdvcvP5oLbtZBKUUAd0Kq02N7KHZB9sOKfDUsH1DDzHWIkfhrlZC6ZCI4PSZCamXtXZC4ZBQezDcnvkhRHDeha7fwfnZCcQUz4RNYUw0MBNYZBBAZDZD"
 console.log("Messenger Bot is starting...")
 const express = require('express')
 const bodyParser = require('body-parser')
