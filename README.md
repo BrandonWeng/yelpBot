@@ -6,4 +6,4 @@ Todo:
 	[ ] Clean up code
 	[ ] Split things up into modules
 	[ ] Change name of page
-
+	[ ] privacy policy pages
