@@ -80,15 +80,15 @@ function messageRecieved(req, res) {
                     continue
                 } else if (text === '1'){
                     price = '1'
-                    yelpSearched(long,lat,price)
+                    yelpSearched(long,lat,price,sender)
                     continue
                 } else if (text === '2'){
                     price = '2'
-                    yelpSearched(long,lat,price)
+                    yelpSearched(long,lat,prices,sender)
                     continue
                 } else if (text == '3'){
                     price = '3'
-                    yelpSearched(long,lat,price)
+                    yelpSearched(long,lat,price,sender)
                     continue
                 }
                 sendTextMessage(sender, "Testing! " + text)
@@ -231,7 +231,7 @@ function sendPriceRangeButton(sender) {
 var Yelp = require('yelp-api-v3');
 var yelp = new Yelp(require('./config'));
 
-function yelpSearched(longitude,latitude,pricePreference){
+function yelpSearched(longitude,latitude,pricePreference,sender){
 
     var yelpSearch = {
         term: 'food',
@@ -239,7 +239,7 @@ function yelpSearched(longitude,latitude,pricePreference){
         //location: location,
         longitude:longitude,
         latitude:latitude,
-        limit:'5',
+        limit:'3',
         sort:'2',
         is_closed:'false',
         price: pricePreference,
@@ -251,5 +251,69 @@ function yelpSearched(longitude,latitude,pricePreference){
     function printYelp(err,data){
         if (err) return console.error("Yelp, Something went wrong! :" + err);
         console.log(JSON.parse(data));
+        sendResturants(sender,JSON.parse(data))
     }
 }
+
+function sendResturants(sender,resturants) {
+        let messageData = {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [{
+                        "title": resturants[1].name,
+                        "image_url": resturants[1].image_url,
+                        "buttons": [{
+                            "type": "web_url",
+                            "url": resturants[1].url,
+                            "title": "See more"
+                        }, {
+                            "type": "postback",
+                            "title": "Postback",
+                            "payload": "first resturant",
+                        }]},
+                        {
+                            "title": resturants[2].name,
+                            "image_url": resturants[2].image_url,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": resturants[2].url,
+                                "title": "See more"
+                            }, {
+                                "type": "postback",
+                                "title": "Postback",
+                                "payload": "second resturant",
+                            }]
+                        }, {
+                            "title": resturants[3].name,
+                            "image_url": resturants[3].image_url,
+                            "buttons": [{
+                                "type": "web_url",
+                                "url": resturants[3].url,
+                                "title": "See more"
+                            }, {
+                                "type": "postback",
+                                "title": "Postback",
+                                "payload": "first resturant",
+                            }]
+                        }]
+                }
+            }
+        }
+        request({
+            url: 'https://graph.facebook.com/v2.6/me/messages',
+            qs: {access_token:token},
+            method: 'POST',
+            json: {
+                recipient: {id:sender},
+                message: messageData,
+            }
+        }, function(error, response, body) {
+            if (error) {
+                console.log('Error sending messages: ', error)
+            } else if (response.body.error) {
+                console.log('Error: ', response.body.error)
+            }
+        })
+    }
