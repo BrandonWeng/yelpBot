@@ -251,6 +251,7 @@ function yelpSearched(longitude,latitude,pricePreference,sender){
     function printYelp(err,data){
         if (err) return console.error("Yelp, Something went wrong! :" + err);
         console.log(JSON.parse(data));
+        console.log(JSON.parse(data).businesses[0])
         sendResturants(sender,JSON.parse(data))
     }
 }
