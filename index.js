@@ -51,6 +51,7 @@ function messageRecieved(req, res) {
                     sendStartButton(sender)
                     continue
                 }
+                /* Used for testing each button
                 if (text === 'Price') {
                     console.log("Sending Price Button")
                     sendPriceRangeButton(sender)
@@ -61,6 +62,7 @@ function messageRecieved(req, res) {
                     sendLocationButton(sender)
                     continue
                 }
+                */
                 sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' or 'hungry' to begin :)")
             }
             if (event.message && event.message.attachments && event.message.attachments[0].payload.coordinates){
