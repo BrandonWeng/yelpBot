@@ -10,8 +10,8 @@ Your preferences will not be shared with anyone.
 - [ ] Clean up code
 - [ ] Split things up into modules
 - [ ] Add categories for users to pick from ('Chinese,Mexican,Bubble Tea,Bar,...')
-- [ ] Merge old page and new page
-- [ ] get approved by facebook
+- [x] Merge old page and new page
+- [x] get approved by facebook
 - [ ] change buttons to quick replies instead
 - [x] Change name of page
 - [x] privacy policy pages
