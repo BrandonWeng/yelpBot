@@ -32,6 +32,7 @@ function postRequest(sender, data, errorHandler) {
             message: data,
         }
     }, errorHandler)
+
 }
 
 
@@ -91,7 +92,7 @@ module.exports = {
     askForStart : askForStart,
     sentRestaurantMessage : sentRestaurant,
     noRestaurantFound : noRestaurantFound,
-    repickBudget : repickBudget,
+    newBudget : repickBudget,
     quickReplyText : quickReplyText,
     quickReplyLocation : quickReplyLocation,
     templateRestaurant : templateRestaurant

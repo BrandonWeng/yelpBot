@@ -1,4 +1,5 @@
 'use strict';
+
 // TODO clean up handler function
 
 // Import Facebook modules with functions that make API requests

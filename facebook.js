@@ -78,12 +78,14 @@ function sendResturants(sender, resturants) {
     // At least 3 Resturants found
     } else {
 
+        // Send message to thank user
+        sendTextMessage(sender, facebook.sentRestaurantMessage);
+
         // Make POST request : send 3 Resturants as templates
         facebook.postRequest(sender, messageData, facebookError);
 
-        // Send message to thank user
-        sendTextMessage(sender, facebook.sentRestaurantMessage);
     }
+
 }
 
 
