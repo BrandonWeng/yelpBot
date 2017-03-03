@@ -72,7 +72,7 @@ function handler(req, res) {
             // Check if it's a coordinate
             // TODO check for the state rather than the coordinates
 
-            if (event.message && event.message.attachments && event.message.attachments[0].payload.coordinates) {
+            if (event.message && event.message.attachments && event.message.attachments[0].payload) {
                 let location = event.message.attachments[0].payload.coordinates;
                 // console.log(JSON.stringify(location))
                 long = location.long;
