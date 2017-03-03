@@ -1,5 +1,5 @@
 'use strict';
-// TODO clean up handler function probably last thing to do before added MongoDB
+// TODO clean up handler function
 
 // Import Facebook modules with functions that make API requests
 let FACEBOOK = new require('./facebook');
@@ -48,11 +48,16 @@ app.post('/webhook/', handler);
 
 function handler(req, res) {
     let messaging_events = req.body.entry[0].messaging;
+
+    // Iterate through each message
     for (let i = 0; i < messaging_events.length; i++) {
         let event = req.body.entry[0].messaging[i];
         let sender = event.sender.id;
+
+        // Check if sender is myself
         if (sender != '680930332088116') {
             if (event.message && event.message.text) {
+
                 // TODO check for state of the conversation and then process
                 let text = event.message.text;
                 if (text === 'Start' || text === 'start' || text === 'hungry' || text === 'Hungry') {
@@ -61,16 +66,19 @@ function handler(req, res) {
                     continue;
                 }
                 FACEBOOK.sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' or 'hungry' to begin :)");
+
             }
 
             // Check if it's a coordinate
             // TODO check for the state rather than the coordinates
+
             if (event.message && event.message.attachments && event.message.attachments[0].payload.coordinates) {
                 let location = event.message.attachments[0].payload.coordinates;
                 // console.log(JSON.stringify(location))
                 long = location.long;
                 lat = location.lat;
                 FACEBOOK.sendPriceRangeButton(sender);
+                continue
             }
 
             // if the event was a post back

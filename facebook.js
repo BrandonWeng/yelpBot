@@ -8,8 +8,8 @@ let facebook = new require('./fbconfig');
 let token = facebook.token;
 let verify_token = facebook.verify_token;
 
-// TODO comment more
-// TODO make a helper function that creates certain buttons, elements to reduce code reuse
+// TODO make a helper function that creates certain buttons and elements
+
 // Error Handler
 function facebookError(error,response) {
     if (error) {
