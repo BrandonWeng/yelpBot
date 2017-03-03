@@ -1,27 +1,33 @@
-console.log("Yelp,I'm Hungry is starting ...");
+'use strict';
+let Yelp = require('yelp-api-v3');
+let yelp = new Yelp(require('./config'));
 
-// var token = 'EAAaGpOO0SCEBANtXJrv2eBDSJqtrHajmUwPnwY50OQkU2SRlOWqJZBU66cd8ZBPyjgE5jmg1odA7ueHh4iWkuBcnj8njXAUkLGAK3oUgxliPjMgAZCii60Mp8idpUlYoREx3dG5Cw66HA70bLo2htbOLck1DRav1Gp6L4zWigZDZD';
+function yelpSearch(longitude, latitude, pricePreference, sender, sendResturants) {
 
-var Yelp = require('yelp-api-v3');
-var yelp = new Yelp(require('./config'));
+    // Search queries used to make POST request to YELP
+    let yelpSearch = {
+        term: 'food',
+        category_filter: 'food',
+        longitude: longitude,
+        latitude: latitude,
+        limit: '3',
+        sort: '2',
+        is_closed: 'false',
+        price: pricePreference,
+        open_now: 'true'
+    };
 
-function yelpSearched(term,location,price,makeCards){
+    // Handler for the request
+    function handler(err, data) {
+        if (err) return console.error("Yelp, Something went wrong! :" + err);
+        console.log(JSON.parse(data));
+        sendResturants(sender, JSON.parse(data));
+    }
 
-  var yelpSearch = {
-    term: term,
-    category_filter:'food' ,
-    location: location,
-    limit:'5',
-    sort:'2',
-    is_closed:'false',
-    price: price,
-    open_now:'true'
-  };
-
-  yelp.search(yelpSearch,printYelp);
-
-  function printYelp(err,data){
-    if (err) return console.error("Yelp, Something went wrong! :" + err);
-    makeCards(JSON.parse(data));
-  }
+    // Make GET request
+    yelp.search(yelpSearch, handler);
 }
+
+module.exports = {
+  yelpSearch : yelpSearch
+};

@@ -1,42 +1,49 @@
-'use strict'
-const token = "EAAaGpOO0SCEBACKheumfl9Pz72WD4ZAE1deRl0OQZB7BnFNlegbSLJJIDE9IfJRTLjZCcLAke88GdChPyzfjHtK5cgaJkj9qAYIcsaoSZCt108wDD5N7W6oQg2klxXfV2rYHSkcIRhbZAH9CT66ZB22QyoEuHZAguE2fvtsEvhtUwZDZD"
-console.log("Messenger Bot is starting...")
-const express = require('express')
-const bodyParser = require('body-parser')
-const request = require('request')
-const app = express()
+'use strict';
+var facebook = new require('./fbconfig');
+const token = facebook.token;
+const verify_token = facebook.verify_token;
+
+var YELP = new require('./yelp');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const request = require('request');
+const app = express();
+
+
 
 let price = 0;
 let lat = 0;
 let long = 0;
 
-app.set('port', (process.env.PORT || 5000))
+// Start on Local:5000 or env.PORT
+app.set('port', (process.env.PORT || 5000));
 
 // Process application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
 
 // Process application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // Index route
 app.get('/', function (req, res) {
     res.send('Facebook Tokens Verified!')
-})
+});
 
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+    if (req.query['hub.verify_token'] === verify_token) {
         res.send(req.query['hub.challenge'])
     }
     res.send('Error, wrong token')
-})
+});
 
 // Spin up the server
-app.listen(app.get('port'), function() {
-    console.log('Successfully Started')
+app.listen(app.get('port'), function () {
+    console.log("Messenger Bot is starting...");
 })
 
-app.post('/webhook/',  messageRecieved);
+app.post('/webhook/', messageRecieved);
 
 function messageRecieved(req, res) {
     let messaging_events = req.body.entry[0].messaging
@@ -46,28 +53,16 @@ function messageRecieved(req, res) {
         if (sender != '680930332088116') {
             if (event.message && event.message.text) {
                 let text = event.message.text
-                if (text === 'Start' || text ==='start' || text ==='hungry' || text === 'Hungry'){
+                if (text === 'Start' || text === 'start' || text === 'hungry' || text === 'Hungry') {
                     console.log("Sending Start Button")
                     sendStartButton(sender)
                     continue
                 }
-                /* Used for testing each button
-                if (text === 'Price') {
-                    console.log("Sending Price Button")
-                    sendPriceRangeButton(sender)
-                    continue
-                }
-                if (text == 'location') {
-                    console.log("Sending Location Button")
-                    sendLocationButton(sender)
-                    continue
-                }
-                */
                 sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' or 'hungry' to begin :)")
             }
-            if (event.message && event.message.attachments && event.message.attachments[0].payload.coordinates){
+            if (event.message && event.message.attachments && event.message.attachments[0].payload.coordinates) {
                 let location = event.message.attachments[0].payload.coordinates
-                console.log(JSON.stringify(location))
+                // console.log(JSON.stringify(location))
                 long = location.long
                 lat = location.lat
                 sendPriceRangeButton(sender)
@@ -80,17 +75,17 @@ function messageRecieved(req, res) {
                 } else if (text === 'notHungry') {
                     sendTextMessage(sender, "awww... I'll be waiting then :(")
                     continue
-                } else if (text === '1'){
+                } else if (text === '1') {
                     price = '1'
-                    yelpSearched(long,lat,price,sender)
+                    YELP.yelpSearch(long, lat, price, sender,sendResturants)
                     continue
-                } else if (text === '2'){
+                } else if (text === '2') {
                     price = '2'
-                    yelpSearched(long,lat,price,sender)
+                    YELP.yelpSearch(long, lat, price, sender,sendResturants)
                     continue
-                } else if (text == '3'){
+                } else if (text == '3') {
                     price = '3'
-                    yelpSearched(long,lat,price,sender)
+                    YELP.yelpSearch(long, lat, price, sender,sendResturants)
                     continue
                 }
                 continue
@@ -101,16 +96,16 @@ function messageRecieved(req, res) {
 }
 
 function sendTextMessage(sender, text) {
-    let messageData = { text:text }
+    let messageData = {text: text}
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
+        qs: {access_token: token},
         method: 'POST',
         json: {
-            recipient: {id:sender},
+            recipient: {id: sender},
             message: messageData,
         }
-    }, function(error, response, body) {
+    }, function (error, response) {
         if (error) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
@@ -125,17 +120,17 @@ function sendStartButton(sender) {
             "type": "template",
             "payload": {
                 "template_type": "button",
-                "text":"Hey! Are you hungry?",
-                "buttons":[
+                "text": "Hey! Are you hungry?",
+                "buttons": [
                     {
-                        "type":"postback",
-                        "title":"Yes!",
-                        "payload":"hungry"
+                        "type": "postback",
+                        "title": "Yes!",
+                        "payload": "hungry"
                     },
                     {
-                        "type":"postback",
-                        "title":"Nope",
-                        "payload":"notHungry"
+                        "type": "postback",
+                        "title": "Nope",
+                        "payload": "notHungry"
                     }
                 ]
             }
@@ -143,13 +138,13 @@ function sendStartButton(sender) {
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
+        qs: {access_token: token},
         method: 'POST',
         json: {
-            recipient: {id:sender},
+            recipient: {id: sender},
             message: messageData,
         }
-    },function(error, response, body) {
+    }, function (error, response) {
         if (error) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
@@ -161,21 +156,21 @@ function sendStartButton(sender) {
 function sendLocationButton(sender) {
     let messageData = {
         "text": "Could I have your location please?",
-        "quick_replies":[
+        "quick_replies": [
             {
-                "content_type":"location",
+                "content_type": "location",
             }
         ]
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
+        qs: {access_token: token},
         method: 'POST',
         json: {
-            recipient: {id:sender},
+            recipient: {id: sender},
             message: messageData,
         }
-    }, function(error, response, body) {
+    }, function (error, response) {
         if (error) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
@@ -190,22 +185,22 @@ function sendPriceRangeButton(sender) {
             "type": "template",
             "payload": {
                 "template_type": "button",
-                "text":"Cool! What's the budget?",
-                "buttons":[
+                "text": "Cool! What's the budget?",
+                "buttons": [
                     {
-                        "type":"postback",
-                        "title":"Cheapest please!",
-                        "payload":"1"
+                        "type": "postback",
+                        "title": "Cheapest please!",
+                        "payload": "1"
                     },
                     {
-                        "type":"postback",
-                        "title":"Doesn't matter",
-                        "payload":"2"
+                        "type": "postback",
+                        "title": "Doesn't matter",
+                        "payload": "2"
                     },
                     {
-                        "type":"postback",
-                        "title":"Treating myself",
-                        "payload":"3"
+                        "type": "postback",
+                        "title": "Treating myself",
+                        "payload": "3"
                     }
                 ]
             }
@@ -213,13 +208,13 @@ function sendPriceRangeButton(sender) {
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
+        qs: {access_token: token},
         method: 'POST',
         json: {
-            recipient: {id:sender},
+            recipient: {id: sender},
             message: messageData,
         }
-    }, function(error, response, body) {
+    }, function (error, response) {
         if (error) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
@@ -229,34 +224,10 @@ function sendPriceRangeButton(sender) {
 }
 
 
-var Yelp = require('yelp-api-v3');
-var yelp = new Yelp(require('./config'));
 
-function yelpSearched(longitude,latitude,pricePreference,sender){
 
-    var yelpSearch = {
-        term: 'food',
-        category_filter:'food' ,
-        //location: location,
-        longitude:longitude,
-        latitude:latitude,
-        limit:'3',
-        sort:'2',
-        is_closed:'false',
-        price: pricePreference,
-        open_now:'true'
-    };
-
-    yelp.search(yelpSearch,printYelp);
-
-    function printYelp(err,data){
-        if (err) return console.error("Yelp, Something went wrong! :" + err);
-        console.log(JSON.parse(data));
-        sendResturants(sender,JSON.parse(data))
-    }
-}
-
-function sendResturants(sender,resturants) {
+function sendResturants(sender, resturants) {
+    // TODO check if there are actual resturants or else postback error message
     let messageData = {
         "attachment": {
             "type": "template",
@@ -269,7 +240,8 @@ function sendResturants(sender,resturants) {
                         "type": "web_url",
                         "url": resturants.businesses[0].url,
                         "title": "More Information"
-                    }]},
+                    }]
+                },
                     {
                         "title": resturants.businesses[1].name,
                         "image_url": resturants.businesses[1].image_url,
@@ -292,19 +264,21 @@ function sendResturants(sender,resturants) {
     }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
+        qs: {access_token: token},
         method: 'POST',
         json: {
-            recipient: {id:sender},
+            recipient: {id: sender},
             message: messageData,
         }
-    }, function(error, response, body) {
+    }, function (error, response) {
         if (error) {
             console.log('Error sending messages: ', error)
         } else if (response.body.error) {
             console.log('Error: ', response.body.error)
         } else {
-            sendTextMessage(sender,"Here are some places you can get food at. These resturants should be open. Sorry if it's not what you were looking for :(")
+            sendTextMessage(sender, "Here are some places you can get food at. " +
+                "These resturants should be open." +
+                "Sorry if it's not what you were looking for.")
         }
     })
 }
