@@ -2,9 +2,11 @@
 let Yelp = require('yelp-api-v3');
 let yelp = new Yelp(require('./config'));
 
+// Finds three resturants close to the sender based on price and their location
+// Makes GET request to YELP's API
 function yelpSearch(longitude, latitude, pricePreference, sender, sendResturants) {
 
-    // Search queries used to make POST request to YELP
+    // Constructing JSON object : To search for 3 resturants
     let yelpSearch = {
         term: 'food',
         category_filter: 'food',
@@ -20,7 +22,10 @@ function yelpSearch(longitude, latitude, pricePreference, sender, sendResturants
     // Handler for the request
     function handler(err, data) {
         if (err) return console.error("Yelp, Something went wrong! :" + err);
-        // console.log(JSON.parse(data));
+
+        // console.log(JSON.parse(data)); // Used to debug YELP API
+
+        // No error , sends resturants to sender
         sendResturants(sender, JSON.parse(data));
     }
 
@@ -28,6 +33,7 @@ function yelpSearch(longitude, latitude, pricePreference, sender, sendResturants
     yelp.search(yelpSearch, handler);
 }
 
+// Export the main function for other modules to use
 module.exports = {
   yelpSearch : yelpSearch
 };

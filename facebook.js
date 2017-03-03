@@ -8,35 +8,65 @@ let facebook = new require('./fbconfig');
 let token = facebook.token;
 let verify_token = facebook.verify_token;
 
-// used to make POST/GET requests
-const request = require('request');
+// TODO comment more
 
-// TODO Make a constructor for making post requests
-// TODO comment more!
-
-function sendTextMessage(sender, text) {
-    let messageData = {text: text}
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: token},
-        method: 'POST',
-        json: {
-            recipient: {id: sender},
-            message: messageData,
-        }
-        // TODO make a error handler
-    }, function (error, response) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
+// Error Handler
+function facebookError(error,response) {
+    if (error) {
+        console.error('ERROR sending messages: ', error)
+    } else if (response.body.error) {
+        console.error('ERROR: response', response.body.error)
+    }
 }
 
 
+// Prompts the sender to start the process
+function sendStartButton(sender) {
+
+    // Construction JSON object : Two buttons to start the process or end
+    let messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "button",
+                "text": "Hey! Are you hungry?",
+                "buttons": [
+                    {
+                        "type": "postback",
+                        "title": "Yes!",
+                        "payload": "hungry"
+                    },
+                    {
+                        "type": "postback",
+                        "title": "Nope",
+                        "payload": "notHungry"
+                    }
+                ]
+            }
+        }
+    };
+
+    // Make POST request : Send start button
+    facebook.postRequest(sender,messageData,facebookError)
+
+}
+
+// Sends text message to sender
+function sendTextMessage(sender, text) {
+
+    // Constructing JSON object : Text message
+    let messageData = {text: text};
+
+    // Make POST request : Send text message to user
+    facebook.postRequest(sender,messageData,facebookError)
+}
+
+// Sends three resturants as template buttons back to sender
 function sendResturants(sender, resturants) {
-    // TODO check if there are actual resturants or else postback error message
+    // TODO check if there are actual resturants or else post back error message
+    // TODO add a restart (Price) option
+
+    // Building JSON object : 3 template buttons
     let messageData = {
         "attachment": {
             "type": "template",
@@ -70,28 +100,19 @@ function sendResturants(sender, resturants) {
                     }]
             }
         }
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token:token},
-        method: 'POST',
-        json: {
-            recipient: {id: sender},
-            message: messageData,
-        }
-    }, function (error, response) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        } else {
-            sendTextMessage(sender, "Here are some of the top picks! These resturants should be open :). " +
-                "I hope it's what you were looking for!")
-        }
-    })
+    };
+
+    // Make POST request : send 3 Resturants as templates
+    facebook.postRequest(sender,messageData,facebookError);
+
+    // Send message to thank user
+    sendTextMessage(sender, facebook.sentRestaurantMessage);
 }
 
+// Prompts sender for price input by sending 4 price buttons
 function sendPriceRangeButton(sender) {
+
+    // Construction JSON object : price buttons that make post backs
     let messageData = {
         "attachment": {
             "type": "template",
@@ -117,92 +138,28 @@ function sendPriceRangeButton(sender) {
                 ]
             }
         }
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: token},
-        method: 'POST',
-        json: {
-            recipient: {id: sender},
-            message: messageData,
-        }
-    }, function (error, response) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
+    };
+
+    // Make POST request: sends three price buttons that make post backs
+    facebook.postRequest(sender,messageData,facebookError);
 }
 
+// Prompts sender for their longitude and latitude
 function sendLocationButton(sender) {
+
+    // Construction JSON object : Location Button
     let messageData = {
-        "text": "Could I have your location please?",
+        "text": facebook.askForLocation,
         "quick_replies": [
             {
                 "content_type": "location",
             }
         ]
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: token},
-        method: 'POST',
-        json: {
-            recipient: {id: sender},
-            message: messageData,
-        }
-    }, function (error, response) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body)
-        }
-    })
+    };
+
+    // Make POST request : send quick reply button
+    facebook.postRequest(sender,messageData,facebookError);
 }
-
-
-
-function sendStartButton(sender) {
-    let messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "button",
-                "text": "Hey! Are you hungry?",
-                "buttons": [
-                    {
-                        "type": "postback",
-                        "title": "Yes!",
-                        "payload": "hungry"
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Nope",
-                        "payload": "notHungry"
-                    }
-                ]
-            }
-        }
-    }
-    request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: token},
-        method: 'POST',
-        json: {
-            recipient: {id: sender},
-            message: messageData,
-        }
-    }, function (error, response) {
-        if (error) {
-            console.log('Error sending messages: ', error)
-        } else if (response.body.error) {
-            console.log('Error: ', response.body.error)
-        }
-    })
-}
-
-
 
 // Export the following for main module to use
 module.exports = {
@@ -213,4 +170,4 @@ module.exports = {
     sendStartButton : sendStartButton,
     sendTextMessage: sendTextMessage,
     sendPriceRangeButton : sendPriceRangeButton
-}
+};

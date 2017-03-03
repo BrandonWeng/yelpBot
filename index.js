@@ -9,9 +9,6 @@ let YELP = new require('./yelp');
 // Express Framework
 const express = require('express');
 const bodyParser = require('body-parser');
-
-// TODO make a helper function that makes requests with default values
-const request = require('request');
 const app = express();
 
 // Current User's latitude and longitude
