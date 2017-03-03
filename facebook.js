@@ -8,6 +8,7 @@ let facebook = new require('./fbconfig');
 let token = facebook.token;
 let verify_token = facebook.verify_token;
 
+// TODO change all buttons to quick replies then,
 // TODO make a helper function that creates certain buttons and elements
 
 // Error Handler
@@ -25,25 +26,19 @@ function sendStartButton(sender) {
 
     // Construction JSON object : Two buttons to start the process or end
     let messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "button",
-                "text": "Hey! Are you hungry?",
-                "buttons": [
-                    {
-                        "type": "postback",
-                        "title": "Yes!",
-                        "payload": "hungry"
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Nope",
-                        "payload": "notHungry"
-                    }
-                ]
+        "text" : "Hey! Are you hungry?",
+        "quick_replies" : [
+            {
+                "content_type":"text",
+                "title" : "Yes!",
+                "payload" : "hungry"
+            },
+            {
+                "content_type":"text",
+                "title" : "Nope",
+                "payload" : "notHungry"
             }
-        }
+        ]
     };
 
     // Make POST request : Send start button

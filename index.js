@@ -54,6 +54,22 @@ function handler(req, res) {
         let event = req.body.entry[0].messaging[i];
         let sender = event.sender.id;
 
+        // if the event was a post back
+        if (event.message && event.message.quick_reply) {
+
+            let payload = event.message.quick_reply.payload;
+
+            // Check which POST back statement was made
+            if (payload === 'hungry') {
+                FACEBOOK.sendLocationButton(sender);
+            } else if (payload === 'notHungry') {
+                FACEBOOK.sendTextMessage(sender, "awww... I'll be waiting then :(");
+            } else if (payload === '1' || payload == '2' || payload =='3' || payload == '4') {
+                YELP.yelpSearch(long, lat, text, sender, FACEBOOK.sendResturants);
+            }
+            continue
+        }
+
         // Check if sender is myself
         if (sender != '680930332088116') {
             if (event.message && event.message.text) {
@@ -81,20 +97,7 @@ function handler(req, res) {
                 continue
             }
 
-            // if the event was a post back
-            if (event.postback) {
 
-                let text = event.postback.payload;
-
-                // Check which POST back statement was made
-                if (text === 'hungry') {
-                    FACEBOOK.sendLocationButton(sender);
-                } else if (text === 'notHungry') {
-                    FACEBOOK.sendTextMessage(sender, "awww... I'll be waiting then :(");
-                } else if (text === '1' || text == '2' || text =='3' || text == '4') {
-                    YELP.yelpSearch(long, lat, text, sender, FACEBOOK.sendResturants);
-                }
-            }
 
         }
     }
