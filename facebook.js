@@ -109,30 +109,29 @@ function sendPriceRangeButton(sender) {
 
     // Construction JSON object : price buttons that make post backs
     let messageData = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "button",
-                "text": "Cool! What's the budget?",
-                "buttons": [
-                    {
-                        "type": "postback",
-                        "title": "Cheapest please!",
-                        "payload": "1"
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Doesn't matter",
-                        "payload": "2"
-                    },
-                    {
-                        "type": "postback",
-                        "title": "Treating myself",
-                        "payload": "3"
-                    }
-                ]
+        "text": "Cool! What's your budget?",
+        "quick_replies": [
+            {
+                "content_type": "text",
+                "title": "Cheapest",
+                "payload": "1"
+            },
+            {
+                "content_type": "text",
+                "title": "Not too cheap",
+                "payload": "2"
+            },
+            {
+                "content_type": "text",
+                "title": "Not too expensive",
+                "payload": "3"
+            },
+            {
+                "content_type": "text",
+                "title": "All out",
+                "payload": "4"
             }
-        }
+        ]
     };
 
     // Make POST request: sends three price buttons that make post backs

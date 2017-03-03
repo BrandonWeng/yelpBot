@@ -20,11 +20,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="518">
-                  <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+                <state relative-caret-position="373">
+                  <caret line="66" column="50" lean-forward="false" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
                   <folding>
                     <element signature="e#847#1003#0" expanded="false" />
                     <element signature="e#1069#1121#0" expanded="false" />
@@ -33,11 +33,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="facebook.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="facebook.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/facebook.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1798">
-                  <caret line="117" column="21" lean-forward="true" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="21" />
+                <state relative-caret-position="2871">
+                  <caret line="112" column="22" lean-forward="false" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#44#0" expanded="false" />
                   </folding>
@@ -97,6 +97,7 @@
       <find>token</find>
       <find>request</find>
       <find>coordinates</find>
+      <find>text</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -806,12 +807,12 @@
       <workItem from="1485325044057" duration="17121000" />
       <workItem from="1485375186508" duration="7000" />
       <workItem from="1488508640990" duration="618000" />
-      <workItem from="1488509397902" duration="9480000" />
+      <workItem from="1488509397902" duration="10145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37014000" />
+    <option name="totallyTimeSpent" value="37679000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1007,23 +1008,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/facebook.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="68" column="13" lean-forward="false" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+        <state relative-caret-position="2871">
+          <caret line="112" column="22" lean-forward="false" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
           <folding>
-            <element signature="e#847#1003#0" expanded="false" />
-            <element signature="e#1069#1121#0" expanded="false" />
+            <element signature="e#0#44#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/facebook.js">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1798">
-          <caret line="117" column="21" lean-forward="true" selection-start-line="117" selection-start-column="21" selection-end-line="117" selection-end-column="21" />
+        <state relative-caret-position="373">
+          <caret line="66" column="50" lean-forward="false" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
           <folding>
-            <element signature="e#0#44#0" expanded="false" />
+            <element signature="e#847#1003#0" expanded="false" />
+            <element signature="e#1069#1121#0" expanded="false" />
           </folding>
         </state>
       </provider>
