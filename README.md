@@ -10,7 +10,8 @@ Your preferences will not be shared with anyone.
 - [ ] Add categories for users to pick from ('Chinese,Mexican,Bubble Tea,Bar,...')
 - [x] change buttons to quick replies instead
 - [ ] add conversation states -> add option to repick price
-- [ ] hide api keys
+- [x] hide api keys
+- [ ] purge old commits
 - [ ] clean up index handler function
 - [x] Change name of page
 - [x] privacy policy pages
