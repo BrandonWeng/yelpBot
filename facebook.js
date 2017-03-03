@@ -9,7 +9,7 @@ let token = facebook.token;
 let verify_token = facebook.verify_token;
 
 // TODO comment more
-
+// TODO make a helper function that creates certain buttons, elements to reduce code reuse
 // Error Handler
 function facebookError(error,response) {
     if (error) {

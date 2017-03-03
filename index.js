@@ -1,4 +1,5 @@
 'use strict';
+// TODO clean up handler function probably last thing to do before added MongoDB
 
 // Import Facebook modules with functions that make API requests
 let FACEBOOK = new require('./facebook');
@@ -42,6 +43,7 @@ app.listen(app.get('port'), function () {
     console.log("Messenger Bot is starting...");
 });
 
+// Post to Facebook webhook
 app.post('/webhook/', handler);
 
 function handler(req, res) {
