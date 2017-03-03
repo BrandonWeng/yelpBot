@@ -20,7 +20,7 @@ function yelpSearch(longitude, latitude, pricePreference, sender, sendResturants
     // Handler for the request
     function handler(err, data) {
         if (err) return console.error("Yelp, Something went wrong! :" + err);
-        console.log(JSON.parse(data));
+        // console.log(JSON.parse(data));
         sendResturants(sender, JSON.parse(data));
     }
 
