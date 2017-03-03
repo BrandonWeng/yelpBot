@@ -77,13 +77,14 @@ function handler(req, res) {
             if (event.message && event.message.text) {
 
                 // TODO check for state of the conversation and then process
-                let text = event.message.text;
-                if (text === 'hi' || text === 'Start' || text === 'start' || text === 'hungry' || text === 'Hungry') {
+                let text = event.message.text.toLowerCase();
+
+                if (text === 'hello' || text == 'hey' || text === 'hi' || text === 'start') {
                     console.log("Sending Start Button");
                     FACEBOOK.sendStartButton(sender);
                     continue;
                 }
-                FACEBOOK.sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' or 'hungry' to begin :)");
+                FACEBOOK.sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' to begin :)");
 
             }
 
