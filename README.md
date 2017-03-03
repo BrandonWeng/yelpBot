@@ -8,8 +8,9 @@ Your preferences will not be shared with anyone.
 
 ### Todo:
 - [ ] Add categories for users to pick from ('Chinese,Mexican,Bubble Tea,Bar,...')
-- [ ] change buttons to quick replies instead
-- [ ] add conversation states
+- [x] change buttons to quick replies instead
+- [ ] add conversation states -> add option to repick price
+- [ ] hide api keys
 - [ ] clean up index handler function
 - [x] Change name of page
 - [x] privacy policy pages
