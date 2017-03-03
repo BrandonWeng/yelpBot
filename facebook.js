@@ -8,8 +8,6 @@ let facebook = new require('./fbconfig');
 let token = facebook.token;
 let verify_token = facebook.verify_token;
 
-// TODO change all buttons to quick replies then,
-// TODO make a helper function that creates certain buttons and elements
 
 // Error Handler
 function facebookError(error,response) {
@@ -26,25 +24,17 @@ function sendStartButton(sender) {
 
     // Construction JSON object : Two buttons to start the process or end
     let messageData = {
-        "text" : "Hey! Are you hungry?",
+        "text" : facebook.askForStart,
         "quick_replies" : [
-            {
-                "content_type":"text",
-                "title" : "Yes!",
-                "payload" : "hungry"
-            },
-            {
-                "content_type":"text",
-                "title" : "Nope",
-                "payload" : "notHungry"
-            }
+            facebook.quickReplyText("Yes!","hungry"),
+            facebook.quickReplyText("Nope ","notHungry")
         ]
     };
 
     // Make POST request : Send start button
     facebook.postRequest(sender,messageData,facebookError)
-
 }
+
 
 // Sends text message to sender
 function sendTextMessage(sender, text) {
@@ -56,10 +46,12 @@ function sendTextMessage(sender, text) {
     facebook.postRequest(sender,messageData,facebookError)
 }
 
+
 // Sends three resturants as template buttons back to sender
 function sendResturants(sender, resturants) {
-    // TODO check if there are actual resturants or else post back error message
     // TODO add a restart (Price) option
+
+    let restaurant = resturants.businesses;
 
     // Building JSON object : 3 template buttons
     let messageData = {
@@ -67,70 +59,48 @@ function sendResturants(sender, resturants) {
             "type": "template",
             "payload": {
                 "template_type": "generic",
-                "elements": [{
-                    "title": resturants.businesses[0].name,
-                    "image_url": resturants.businesses[0].image_url,
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": resturants.businesses[0].url,
-                        "title": "More Information"
-                    }]
-                },
-                    {
-                        "title": resturants.businesses[1].name,
-                        "image_url": resturants.businesses[1].image_url,
-                        "buttons": [{
-                            "type": "web_url",
-                            "url": resturants.businesses[1].url,
-                            "title": "More Information"
-                        }]
-                    }, {
-                        "title": resturants.businesses[2].name,
-                        "image_url": resturants.businesses[2].image_url,
-                        "buttons": [{
-                            "type": "web_url",
-                            "url": resturants.businesses[2].url,
-                            "title": "See more"
-                        }]
-                    }]
+                "elements": [
+                    facebook.templateRestaurant(restaurant[0]),
+                    facebook.templateRestaurant(restaurant[1]),
+                    facebook.templateRestaurant(restaurant[2])
+                ]
             }
         }
     };
 
-    // Make POST request : send 3 Resturants as templates
-    facebook.postRequest(sender,messageData,facebookError);
+    // if no resturants are found at this price
+    if (restaurant.length != 3){
 
-    // Send message to thank user
-    sendTextMessage(sender, facebook.sentRestaurantMessage);
+        // Send message prompt user to choose new budget since
+        // no resturants were found
+        sendPriceRangeButton(sender,facebook.sentRestaurantMessage);
+
+    // At least 3 Resturants found
+    } else {
+
+        // Make POST request : send 3 Resturants as templates
+        facebook.postRequest(sender, messageData, facebookError);
+
+        // Send message to thank user
+        sendTextMessage(sender, facebook.sentRestaurantMessage);
+    }
 }
 
+
 // Prompts sender for price input by sending 4 price buttons
-function sendPriceRangeButton(sender) {
+function sendPriceRangeButton(sender,text) {
+
+    // check if text was passed, if not assume default value
+    text = text || facebook.askForBudget;
 
     // Construction JSON object : price buttons that make post backs
     let messageData = {
-        "text": "Cool! What's your budget?",
+        "text": text,
         "quick_replies": [
-            {
-                "content_type": "text",
-                "title": "Cheapest",
-                "payload": "1"
-            },
-            {
-                "content_type": "text",
-                "title": "Not too cheap",
-                "payload": "2"
-            },
-            {
-                "content_type": "text",
-                "title": "Not too expensive",
-                "payload": "3"
-            },
-            {
-                "content_type": "text",
-                "title": "All out",
-                "payload": "4"
-            }
+            facebook.quickReplyText("Cheapest","1"),
+            facebook.quickReplyText("Not too cheap","2"),
+            facebook.quickReplyText("Not too expensive","3"),
+            facebook.quickReplyText("All out","4")
         ]
     };
 
@@ -138,22 +108,17 @@ function sendPriceRangeButton(sender) {
     facebook.postRequest(sender,messageData,facebookError);
 }
 
+
 // Prompts sender for their longitude and latitude
 function sendLocationButton(sender) {
 
     // Construction JSON object : Location Button
-    let messageData = {
-        "text": facebook.askForLocation,
-        "quick_replies": [
-            {
-                "content_type": "location",
-            }
-        ]
-    };
+    let messageData = facebook.quickReplyLocation
 
     // Make POST request : send quick reply button
     facebook.postRequest(sender,messageData,facebookError);
 }
+
 
 // Export the following for main module to use
 module.exports = {

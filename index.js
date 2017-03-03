@@ -46,6 +46,7 @@ app.listen(app.get('port'), function () {
 // Post to Facebook webhook
 app.post('/webhook/', handler);
 
+// Handler for incoming requests / making requests
 function handler(req, res) {
     let messaging_events = req.body.entry[0].messaging;
 

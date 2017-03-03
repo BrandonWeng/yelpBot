@@ -1,6 +1,8 @@
 'use strict';
+
+// YELP npm
 let Yelp = require('yelp-api-v3');
-let yelp = new Yelp(require('./config'));
+let yelp = new Yelp(require('./yelpconfig'));
 
 // Finds three resturants close to the sender based on price and their location
 // Makes GET request to YELP's API
@@ -19,19 +21,21 @@ function yelpSearch(longitude, latitude, pricePreference, sender, sendResturants
         open_now: 'true'
     };
 
+    // Make GET request
+    yelp.search(yelpSearch, handler);
+
     // Handler for the request
     function handler(err, data) {
-        if (err) return console.error("Yelp, Something went wrong! :" + err);
 
-        // console.log(JSON.parse(data)); // Used to debug YELP API
+        // Print out error message to console
+        if (err) return console.error("Yelp, Something went wrong! :\n " + err);
 
         // No error , sends resturants to sender
         sendResturants(sender, JSON.parse(data));
     }
 
-    // Make GET request
-    yelp.search(yelpSearch, handler);
 }
+
 
 // Export the main function for other modules to use
 module.exports = {
