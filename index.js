@@ -65,7 +65,7 @@ function handler(req, res) {
                 FACEBOOK.sendLocationButton(sender);
             } else if (payload === 'notHungry') {
                 FACEBOOK.sendTextMessage(sender, "awww... I'll be waiting then :(");
-            } else if (payload === '1' || payload == '2' || payload =='3' || payload == '4') {
+            } else if (payload === '1' || payload == '2' || payload =='3') {
                 YELP.yelpSearch(long, lat, payload, sender, FACEBOOK.sendResturants);
             }
             continue

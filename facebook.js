@@ -98,9 +98,8 @@ function sendPriceRangeButton(sender,text) {
         "text": text,
         "quick_replies": [
             facebook.quickReplyText("Cheapest","1"),
-            facebook.quickReplyText("Not too cheap","2"),
-            facebook.quickReplyText("Not too expensive","3"),
-            facebook.quickReplyText("All out","4")
+            facebook.quickReplyText("Average","2"),
+            facebook.quickReplyText("Treating myself","3"),
         ]
     };
 
