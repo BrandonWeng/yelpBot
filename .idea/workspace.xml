@@ -15,10 +15,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
+            <state relative-caret-position="1943">
               <caret line="74" column="98" lean-forward="false" selection-start-line="74" selection-start-column="98" selection-end-line="74" selection-end-column="98" />
               <folding>
                 <element signature="e#847#1003#0" expanded="false" />
@@ -28,10 +28,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="facebook.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="facebook.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/facebook.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
+            <state relative-caret-position="924">
               <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
@@ -103,11 +103,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/facebook.js" />
         <option value="$PROJECT_DIR$/fbconfig.js" />
         <option value="$PROJECT_DIR$/yelp.js" />
         <option value="$PROJECT_DIR$/config.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/facebook.js" />
       </list>
     </option>
   </component>
@@ -799,12 +799,12 @@
       <workItem from="1485325044057" duration="17121000" />
       <workItem from="1485375186508" duration="7000" />
       <workItem from="1488508640990" duration="618000" />
-      <workItem from="1488509397902" duration="7876000" />
+      <workItem from="1488509397902" duration="8433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35410000" />
+    <option name="totallyTimeSpent" value="35967000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -988,9 +988,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1943">
+          <caret line="74" column="98" lean-forward="false" selection-start-line="74" selection-start-column="98" selection-end-line="74" selection-end-column="98" />
+          <folding>
+            <element signature="e#847#1003#0" expanded="false" />
+            <element signature="e#1069#1121#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/facebook.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
+        <state relative-caret-position="924">
           <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
@@ -998,17 +1009,6 @@
             <element signature="e#1990#3340#0" expanded="false" />
             <element signature="e#3753#4546#0" expanded="false" />
             <element signature="e#4847#5004#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="74" column="98" lean-forward="false" selection-start-line="74" selection-start-column="98" selection-end-line="74" selection-end-column="98" />
-          <folding>
-            <element signature="e#847#1003#0" expanded="false" />
-            <element signature="e#1069#1121#0" expanded="false" />
           </folding>
         </state>
       </provider>

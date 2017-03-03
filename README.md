@@ -10,6 +10,7 @@ Your preferences will not be shared with anyone.
 - [ ] Add categories for users to pick from ('Chinese,Mexican,Bubble Tea,Bar,...')
 - [ ] change buttons to quick replies instead
 - [ ] add conversation states
+- [ ] clean up index handler function
 - [x] Change name of page
 - [x] privacy policy pages
 - [x] app icon 1024x1024df
