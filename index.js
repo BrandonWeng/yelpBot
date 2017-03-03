@@ -77,7 +77,7 @@ function handler(req, res) {
 
                 // TODO check for state of the conversation and then process
                 let text = event.message.text;
-                if (text === 'Start' || text === 'start' || text === 'hungry' || text === 'Hungry') {
+                if (text === 'hi' || text === 'Start' || text === 'start' || text === 'hungry' || text === 'Hungry') {
                     console.log("Sending Start Button");
                     FACEBOOK.sendStartButton(sender);
                     continue;

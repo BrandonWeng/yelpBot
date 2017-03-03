@@ -15,7 +15,6 @@ function yelpSearch(longitude, latitude, pricePreference, sender, sendResturants
         longitude: longitude,
         latitude: latitude,
         limit: '3',
-        sort: '2',
         is_closed: 'false',
         price: pricePreference,
         open_now: 'true'

@@ -7,7 +7,7 @@
 // Facebook APP tokens
 // Facebook secret verify tokens
 let token = 'EAAaGpOO0SCEBACKheumfl9Pz72WD4ZAE1deRl0OQZB7BnFNlegbSLJJIDE9IfJRTLjZCcLAke88GdChPyzfjHtK5cgaJkj9qAYIcsaoSZCt108wDD5N7W6oQg2klxXfV2rYHSkcIRhbZAH9CT66ZB22QyoEuHZAguE2fvtsEvhtUwZDZD';
-let verify_token = 'yelp_im_hungry2017'
+let verify_token = 'yelp_im_hungry2017';
 
 // Constant Text messages to send to users
 let sentRestaurant = "Here are some of the top picks! These resturants should be open :) I hope it's what you were looking for!";
@@ -46,7 +46,7 @@ function quickReplyText(title,payload) {
 
 
 // Generate quick reply location button for sender
-var quickReplyLocation = {
+let quickReplyLocation = {
     "text": askForLocation,
     "quick_replies": [
         {
@@ -60,14 +60,18 @@ var quickReplyLocation = {
 function templateRestaurant(business){
 
     // current business's information
-    var title = business.name
-    var imageUrl = business.image_url
-    var url = business.url
+    let title = business.name ;
+    let imageUrl = business.image_url;
+    let url = business.url;
+    let distance = (business.distance / 1000.0).toFixed(2); // In km
+    let distanceString = "Distance : " + distance.toString() + "KM";
+
 
     // Return template object generated
     return {
         "title": title,
         "image_url": imageUrl,
+        "subtitle": distanceString,
         "buttons": [{
             "type": "web_url",
             "url": url,
