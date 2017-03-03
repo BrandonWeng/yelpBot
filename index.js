@@ -92,7 +92,6 @@ function handler(req, res) {
 
             if (event.message && event.message.attachments && event.message.attachments[0].payload) {
                 let location = event.message.attachments[0].payload.coordinates;
-                // console.log(JSON.stringify(location))
                 long = location.long;
                 lat = location.lat;
                 FACEBOOK.sendPriceRangeButton(sender);
