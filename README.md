@@ -7,13 +7,13 @@ Your preferences will not be shared with anyone.
 
 
 ### Todo:
-- [ ] Clean up code
-- [ ] Split things up into modules
 - [ ] Add categories for users to pick from ('Chinese,Mexican,Bubble Tea,Bar,...')
-- [x] Merge old page and new page
-- [x] get approved by facebook
 - [ ] change buttons to quick replies instead
+- [ ] add conversation states
 - [x] Change name of page
 - [x] privacy policy pages
 - [x] app icon 1024x1024df
-
+- [x] Merge old page and new page
+- [x] get approved by facebook
+- [X] Clean up code
+- [X] Split things up into modules
