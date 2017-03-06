@@ -8,6 +8,9 @@ let FACEBOOK = new require('./facebook');
 // Import YELP module with functions that make API requests
 let YELP = new require('./yelp');
 
+// Import states functions to check state of conversation
+let STATE = new require('./states')
+
 // Express Framework
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -57,7 +60,7 @@ function handler(req, res) {
         let sender = event.sender.id;
 
         // if the event was a post back
-        if (event.message && event.message.quick_reply) {
+        if (STATE.isPayload(event)) {
 
             let payload = event.message.quick_reply.payload;
 
@@ -73,36 +76,37 @@ function handler(req, res) {
         }
 
         // Check if sender is myself
-        if (sender != '680930332088116') {
-            if (event.message && event.message.text) {
+        if (STATE.notMyself(sender)) {
 
-                // TODO check for state of the conversation and then process
+            // check if this is a Text message
+            if (STATE.isText(event)) {
+
                 let text = event.message.text.toLowerCase();
 
+                // Check if correct introductory phrase was said
                 if (text === 'hello' || text == 'hey' || text === 'hi' || text === 'start') {
                     console.log("Sending Start Button");
                     FACEBOOK.sendStartButton(sender);
                     continue;
                 }
+
+                // If the incorrect message was said
                 FACEBOOK.sendTextMessage(sender, "Sorry! Im not that smart yet. Please say 'start' to begin :)");
-
-            }
-
-            // Check if it's a coordinate
-            // TODO check for the state rather than the coordinates
-
-            if (event.message && event.message.attachments && event.message.attachments[0].payload) {
-                let location = event.message.attachments[0].payload.coordinates;
-                long = location.long;
-                lat = location.lat;
-                FACEBOOK.sendPriceRangeButton(sender);
                 continue
             }
 
-
+            // Check if it's a coordinate post back
+            if (STATE.isCoordinates(event)){
+                let location = event.message.attachments[0].payload.coordinates;
+                long = location.long;
+                lat = location.lat;
+                FACEBOOK.sendPriceButton(sender);
+                continue
+            }
 
         }
     }
+
     // Need to send status back to Facebook
     res.sendStatus(200);
 }

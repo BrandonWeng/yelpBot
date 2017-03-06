@@ -3,7 +3,6 @@
 // YELP npm
 let Yelp = require('yelp-api-v3');
 let yelp = new Yelp(require('./yelpconfig'));
-
 // Finds three resturants close to the sender based on price and their location
 // Makes GET request to YELP's API
 function yelpSearch(longitude, latitude, pricePreference, sender, sendResturants) {

@@ -48,7 +48,7 @@ function sendTextMessage(sender, text) {
 
 
 // Sends three resturants as template buttons back to sender
-function sendResturants(sender, resturants) {
+function sendResturants(sender, resturants,sendPrice) {
     // TODO add a restart (Price) option
 
     let restaurant = resturants.businesses;
@@ -73,7 +73,7 @@ function sendResturants(sender, resturants) {
 
         // Send message prompt user to choose new budget since
         // no resturants were found
-        sendPriceRangeButton(sender,facebook.sentRestaurantMessage);
+        sendPriceButton(sender,facebook.sentRestaurantMessage);
 
     // At least 3 Resturants found
     } else {
@@ -82,15 +82,14 @@ function sendResturants(sender, resturants) {
         sendTextMessage(sender, facebook.sentRestaurantMessage);
 
         // Make POST request : send 3 Resturants as templates
-        facebook.postRequest(sender, messageData, facebookError);
-
+        facebook.postRequest(sender, messageData, facebookError,sendPriceButton);
     }
 
 }
 
 
 // Prompts sender for price input by sending 4 price buttons
-function sendPriceRangeButton(sender,text) {
+function sendPriceButton(sender, text) {
 
     // check if text was passed, if not assume default value
     text = text || facebook.askForBudget;
@@ -129,5 +128,5 @@ module.exports = {
     sendLocationButton : sendLocationButton,
     sendStartButton : sendStartButton,
     sendTextMessage: sendTextMessage,
-    sendPriceRangeButton : sendPriceRangeButton
+    sendPriceButton : sendPriceButton
 };
