@@ -7,12 +7,10 @@ Your preferences will not be shared with anyone.
 
 
 ### Todo:
-- [ ] Add categories for users to pick from ('Chinese,Mexican,Bubble Tea,Bar,...')
-- [x] change buttons to quick replies instead
-- [ ] add conversation states -> add option to repick price
-- [x] hide api keys
-- [ ] purge old commits
+- [ ] add option to repick price
 - [ ] clean up index handler function
+- [x] change buttons to quick replies instead
+- [x] hide api keys
 - [x] Change name of page
 - [x] privacy policy pages
 - [x] app icon 1024x1024df
