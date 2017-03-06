@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1803c39a-28d4-48eb-8ff6-450d01cbe478" name="Default" comment="" />
+    <list default="true" id="1803c39a-28d4-48eb-8ff6-450d01cbe478" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yelpconfig.js" afterPath="$PROJECT_DIR$/yelpconfig.js" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +20,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="2001">
@@ -27,7 +30,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="yelp.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="yelp.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/yelp.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="319">
@@ -54,11 +57,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="fbconfig.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="fbconfig.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/fbconfig.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+                <state relative-caret-position="261">
+                  <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="yelpconfig.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/yelpconfig.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="203">
+                  <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -115,13 +128,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/config.js" />
-        <option value="$PROJECT_DIR$/yelpconfig.js" />
         <option value="$PROJECT_DIR$/handlers.js" />
         <option value="$PROJECT_DIR$/states.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/yelp.js" />
         <option value="$PROJECT_DIR$/facebook.js" />
         <option value="$PROJECT_DIR$/fbconfig.js" />
+        <option value="$PROJECT_DIR$/yelpconfig.js" />
       </list>
     </option>
   </component>
@@ -817,12 +830,12 @@
       <workItem from="1488508640990" duration="618000" />
       <workItem from="1488509397902" duration="19362000" />
       <workItem from="1488595367538" duration="3745000" />
-      <workItem from="1488766912515" duration="1958000" />
+      <workItem from="1488766912515" duration="2246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52599000" />
+    <option name="totallyTimeSpent" value="52887000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -978,6 +991,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,6 +1023,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,6 +1039,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,6 +1063,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,13 +1101,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yelpconfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/states.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="841">
@@ -1112,14 +1122,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/yelp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2001">
@@ -1128,10 +1130,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fbconfig.js">
+    <entry file="file://$PROJECT_DIR$/yelp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fbconfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yelpconfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding />
         </state>
       </provider>
